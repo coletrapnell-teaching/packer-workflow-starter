@@ -1,4 +1,4 @@
-# GENOME569A Project: Reproducing Figure 1A from Packer et al., Science 2019
+# GENOME569A Project
 
 ## Introduction
 
@@ -33,7 +33,6 @@ You will also begin integrating this tool into your broader **Snakemake workflow
 python fetch_fastqs.py \
     --geo GSE126954 \
     --output_dir data/raw \
-    --max_size 15000000000 \
     --prefetch_dir /path/to/cache
 ```
 
@@ -59,7 +58,7 @@ rule fetch_fastqs:
     params:
         geo="GSE126954"
     shell:
-        "python scripts/fetch_fastqs.py --geo {params.geo} --output_dir data/raw --max_size 15000000000"
+        "python scripts/fetch_fastqs.py --geo {params.geo} --output_dir data/raw"
 ```
 
 Then define your SRR IDs in `config.yaml` or load them dynamically.

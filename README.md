@@ -36,6 +36,10 @@ python fetch_fastqs.py \
     --prefetch_dir /path/to/cache
 ```
 
+#### Important Tips!
+- Downloading SRA files can take a long time and extra copies take up a lot of space. You can find the files already available at: `/net/trapnell/vol1/home/coletrap/tmp/srafiles/`. You should use this directory as your `prefetch_dir` to avoid downloading additional copies.
+- Extracting FASTQ files from SRA files can take a long time. While you are building and testing your workflow, consider adding options that limit the number of samples that your workflow processes, so you can test the whole thing on a smaller amount of data before scaling up.
+
 #### 📁 Recommended Directory Structure
 ```
 data/

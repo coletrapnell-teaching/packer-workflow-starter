@@ -1,0 +1,535 @@
+# Table S4. Marker genes for lineage annotations.											
+# This table lists the marker genes that were used to annotate sc-RNA-seq cells with their corresponding lineage identity.											
+# Expression patterns for marker genes were retrieved from Wormbase (26) (https://wormbase.org) and EPiC (17) (http://epic.gs.washington.edu/Epic2/).											
+# Our lineage annotations include both pre-terminal cells and terminal cells with estimated embryo time < 510 minutes.											
+# "Terminal cells with estimated embryo time >= 510 minutes were excluded from this annotation set, but are included in the cell type annotations described in Tables S1, S2, and S7."											
+# "A subset of the UMAPs that guided the lineage annotations are shown in Figs S14-17, and Figs. S4-S11."											
+# "The full set of UMAPs can be explored in the VisCello application. The ""UMAP group"" column in this table specifies whether the UMAP is found in the ""Cell type"" or ""Early lineage"" section of the application."											
+# POE in the marker gene lists = Process of Elimination.											
+Lineage	Lineage group	UMAP	UMAP group	Markers	Cells produced	IsTerminal	Redundant	Notes			
+Z2/Z3:pseudotime_bin_1	Z2/Z3	"Early embryo, germline, and rectum"	Cell type	"glh-1, pgl-1, nos-1"		1	0	"For our statistics, counted as a terminal cell type and not a pre-terminal lineage because it does not divide further until after hatching."			
+Z2/Z3:pseudotime_bin_2	Z2/Z3	"Early embryo, germline, and rectum"	Cell type	"glh-1, pgl-1, nos-1"		1	0	See above.			
+Z2/Z3:pseudotime_bin_3	Z2/Z3	"Early embryo, germline, and rectum"	Cell type	"glh-1, pgl-1, nos-1"		1	0	See above.			
+Exx	E4	Intestine	Cell type	"end-1, elt-2, elt-7"		0	0	Boundary of Ex and Exxx estimated based on embryo time.			
+Exxx	E8	Intestine	Cell type	"end-1, elt-2, elt-7"		0	0	See above.			
+Eaxaa	E16	Time 350min intestine	Early lineage	"ceh-37, odd-1"	int1D/int1V	0	0				
+Eaxap/Eaxpa	E16	Time 350min intestine	Early lineage	"ceh-37, no odd-1"	"int2, int3"	1	0				
+Eaxpp/Epxap	E16	Time 350min intestine	Early lineage	pal-1	"int5, int6"	1	0				
+Epxaa	E16	Time 350min intestine	Early lineage	POE	int4	1	0				
+Epxpa	E16	Time 350min intestine	Early lineage	"nob-1, no odd-2"	int7	1	0				
+Epxpp	E16	Time 350min intestine	Early lineage	"nob-1, php-3, odd-2, pax-3, tlp-1"	int8/int9	0	0				
+Dx	D2	Time 150min lineage	Early lineage	"pal-1, hnd-1"		0	0				
+Dxa	D4	Time 250min C/D bwm	Early lineage	unc-130		0	0				
+Dxp	D4	Time 250min C/D bwm	Early lineage	tbx-8		0	0				
+Dxap	D8	Time 300min non-pharyngeal mesoderm	Early lineage	"tbx-2, unc-130"	BWM V3/V5	0	0				
+Dxpp	D8	Time 300min non-pharyngeal mesoderm	Early lineage	"tbx-2, tbx-8"	BWM D7/9/11/13	0	0				
+Dxxa	D8	Time 300min non-pharyngeal mesoderm	Early lineage	POE	"BWM D8/10, V6/8"	0	0				
+Dxaap	D16	Time 300min non-pharyngeal mesoderm	Early lineage	ceh-13	BWM D8	1	0	"Includes early cells only, before trajectory converges with Dxpap and Dxxaa. Late cells are annotated as ""Dxxax""."			
+Dxapa	D16	Time 300min non-pharyngeal mesoderm	Early lineage	ceh-34	BWM V3	1	0	"Includes early cells only, before trajectory converges with sister Dxapp. Late cells after trajectory convergence are annotated as ""Dxapx""."			
+Dxapp	D16	Time 300min non-pharyngeal mesoderm	Early lineage	ceh-13	BWM V5	1	0	"Includes early cells only, before trajectory converges with sister Dxapa. Late cells after trajectory convergence are annotated as ""Dxapx""."			
+Dxapx	D16	Time 350min non-pharyngeal mesoderm	Early lineage	POE	BWM V3 and V5	1	1	"Includes late cells only, after trajectories of Dxapa and Dxapp converge. Early cells are annotated separately as ""Dxapa"" and ""Dxapp""."			
+Dxpap	D16	Time 300min non-pharyngeal mesoderm	Early lineage	lin-39	BWM D10	1	0	"Includes early cells only, before trajectory converges with Dxaap and Dxxaa. Late cells are annotated as ""Dxxax""."			
+Dxppa	D16	Time 350min non-pharyngeal mesoderm	Early lineage	ceh-13	BWM D7/D9	0	0				
+Dxppp	D16	Time 350min non-pharyngeal mesoderm	Early lineage	lin-39	BWM D11/D13	0	0				
+Dxxaa	D16	Time 300min non-pharyngeal mesoderm	Early lineage	unc-130	BWM V6 and V8	1	0	"Includes early cells only, before trajectory converges with Dxaap and Dxpap. Late cells are annotated as ""Dxxax""."			
+Dxxax	D16	Time 350min non-pharyngeal mesoderm	Early lineage	POE	BWM V6/D8 and V8/D10	1	1	"Includes late cells only, after trajectories of Dxaap, Dxpap, and Dxxaa converge. Early cells are annotated separately as ""Dxaap"", ""Dxpap"", and ""Dxxaa""."			
+Dxppax	D_gen_5	Time 300-400min posterior muscle	Early lineage	ceh-13	BWM D7 and D9	1	0	Continuation of UMAP trajectory for Dxppa. Cell division point estimated based on embryo time.			
+Dxpppx	D_gen_5	Time 300-400min posterior muscle	Early lineage	lin-39	BWM D11 and D13	1	0	Continuation of UMAP trajectory for Dxppp. Cell division point estimated based on embryo time.			
+Cx	C2	Time 130min lineage	Early lineage	"pal-1, embryo time < 110"		0	0				
+Cxa	C4	Time 150min lineage	Early lineage	"pal-1, elt-1"		0	0				
+Cxp	C4	Time 150min lineage	Early lineage	"pal-1, hnd-1"		0	0	proximal to Cxa in UMAP			
+Cxaa	C8	Time 250min lineage	Early lineage	lin-39	hyp7 (8x)	0	0				
+Cxap	C8	Time 300min C hypodermis/DVC	Early lineage	"ztf-11, mom-2"	"hyp7 (4x), hyp11, DVC, PVR"	0	0				
+Cxpa	C8	Time 250min C/D bwm	Early lineage	"vab-23, lin-39"		0	0				
+Cxpp	C8	Time 250min C/D bwm	Early lineage	tlp-1		0	0				
+Caapa	C16	"Time 300min C hypodermis/DVC, Non-ciliated neurons"	"Early lineage, Cell type"	"ces-1, ztf-11, vab-7, hlh-14, php-3, nob-1"	DVC/x	0	0				
+Cpapa	C16	Time 300min C hypodermis/DVC	Early lineage	mom-2	hyp7 (2x)	0	0				
+Cxaax	C16	Time 300min C hypodermis/DVC	Early lineage	POE	hyp7 (8x)	0	0				
+Cxapp	C16	Time 300min C hypodermis/DVC	Early lineage	"nob-1, ztf-11, tbx-11"	"hyp7/hyp11, hyp7/PVR"	0	0	"In theory Caapp and Cpapp could be different, but found markers of both in one trajectory"			
+Cxpaa	C16	Time 300min non-pharyngeal mesoderm	Early lineage	"lin-39, hlh-8"	BWM V10/12/14/16	0	0				
+Cxpap	C16	Time 300min non-pharyngeal mesoderm	Early lineage	vab-15 (?)	"BWM D14/18, V19/22"	0	0				
+Cxppa	C16	Time 300min non-pharyngeal mesoderm	Early lineage	"lin-39, mab-5, unc-130"	BWM D12/17/20/24	0	0				
+Cxppp	C16	Time 300min non-pharyngeal mesoderm	Early lineage	vab-1	"BWM D19/21/23, V23"	0	0				
+Caapaa	C32	Non-ciliated neurons	Cell type	"ceh-63, hlh-14, hlh-13, egl-20"	DVC	1	0				
+Caapap	C32	NA	NA	NA	x	1	0	Not identified (cell death).			
+Caappv	C32	Time 300min C hypodermis/DVC	Early lineage	"hlh-14, unc-86, egl-20"	PVR	1	0				
+Cpapax	C32	Time 300min C hypodermis/DVC	Early lineage	mom-2	hyp7	1	0				
+Cpappv	C32	Time 300min C hypodermis/DVC	Early lineage	"lin-44, nhr-25"	hyp11	1	0				
+Cxaaax/Cxaapa	C32	Time 300min C hypodermis/DVC	Early lineage	lin-39	hyp7	1	0				
+Cxaapp	C32	Time 300min C hypodermis/DVC	Early lineage	mab-5	hyp7	1	0				
+Cxappd	C32	Time 300min C hypodermis/DVC	Early lineage	tbx-2	hyp7	1	0				
+Cxpaaa	C32	Time 350min non-pharyngeal mesoderm	Early lineage	POE	bwm V10/V12	0	0				
+Cxpaap	C32	Time 350min non-pharyngeal mesoderm	Early lineage	mab-5	bwm V14/V16	0	0				
+Cxpapa	C32	Time 350min non-pharyngeal mesoderm	Early lineage	POE	bwm D14/D18	0	0				
+Cxpapp	C32	Time 350min non-pharyngeal mesoderm	Early lineage	egl-5	bwm V19/V22	0	0				
+Cxppaa	C32	Time 350min non-pharyngeal mesoderm	Early lineage	POE	bwm D12/D17	0	0				
+Cxppap	C32	Time 350min non-pharyngeal mesoderm	Early lineage	egl-5	bwm D20/D24	0	0				
+Cxpppa	C32	Time 350min non-pharyngeal mesoderm	Early lineage	POE	bwm D19/D21	0	0				
+Cxpppp	C32	Time 350min non-pharyngeal mesoderm	Early lineage	egl-5	bwm D23/V(23 or 24)	0	0				
+Cxpaaax	C_gen_6	Time 300-400min posterior muscle	Early lineage	POE	BWM V10 and V12	1	0	Continuation of UMAP trajectory for Cxpaaa. Cell division point estimated based on embryo time.			
+Cxpaapx	C_gen_6	Time 300-400min posterior muscle	Early lineage	mab-5	BWM V14 and V16	1	0	Continuation of UMAP trajectory for Cxpaap. Cell division point estimated based on embryo time.			
+Cxpapax	C_gen_6	Time 300-400min posterior muscle	Early lineage	POE	BWM D14 and D18	1	0	Continuation of UMAP trajectory for Cxpapa. Cell division point estimated based on embryo time.			
+Cxpappx	C_gen_6	Time 300-400min posterior muscle	Early lineage	egl-5	BWM V19 and V22	1	0	Continuation of UMAP trajectory for Cxpapp. Cell division point estimated based on embryo time.			
+Cxppaax	C_gen_6	Time 300-400min posterior muscle	Early lineage	POE	BWM D12 and D17	1	0	Continuation of UMAP trajectory for Cxppaa. Cell division point estimated based on embryo time.			
+Cxppapx	C_gen_6	Time 300-400min posterior muscle	Early lineage	egl-5	BWM D20 and D24	1	0	Continuation of UMAP trajectory for Cxppap. Cell division point estimated based on embryo time.			
+Cxpppax	C_gen_6	Time 300-400min posterior muscle	Early lineage	POE	BWM D19 and D21	1	0	Continuation of UMAP trajectory for Cxpppa. Cell division point estimated based on embryo time.			
+Cxppppx	C_gen_6	Time 300-400min posterior muscle	Early lineage	egl-5	BWM D23 and V(23 or 24)	1	0	Continuation of UMAP trajectory for Cxpppp. Cell division point estimated based on embryo time.			
+MSx	MS2	Time 130min lineage	Early lineage	"sdz-1, sdz-31, embryo time < 110"	Could include early undifferentiated MSxx	0	0				
+MSxa	MS4	Time 150min lineage	Early lineage	"ceh-51, pha-4"		0	0				
+MSxp	MS4	Time 150min lineage	Early lineage	"ceh-51, hnd-1"		0	0				
+MSxaa	MS8	Time 200min pharynx	Early lineage	"alr-1, irx-1"		0	0				
+MSxap	MS8	Time 200min pharynx	Early lineage	ceh-36		0	0				
+MSxpa	MS8	Time 200min lineage	Early lineage	unc-39		0	0				
+MSxpp	MS8	Time 200min lineage	Early lineage	unc-120		0	0				
+MSxaaa	MS16	Time 200min pharynx	Early lineage	"ceh-27, tbx-2"		0	0				
+MSxaap	MS16	Time 250 MSxa + MSxp	Early lineage	ceh-36		0	0				
+MSxapa	MS16	Time 250 MSxa + MSxp	Early lineage	"dmd-4, ceh-16"		0	0				
+MSxapp	MS16	Time 250 MSxa + MSxp	Early lineage	nhr-67		0	0				
+MSxpaa	MS16	Time 200min lineage	Early lineage	ref-2		0	0				
+MSxpap	MS16	Time 200min lineage	Early lineage	"tbx-8, unc-120, unc-39"		0	0				
+MSxppa	MS16	Time 200min lineage	Early lineage	"POE, UMAP connectivity to lineage descendents"		0	0				
+MSxppp	MS16	Time 200min lineage	Early lineage	tbx-8		0	0				
+MSaaaaa	MS32	Time 300min MS pharynx	Early lineage	"let-381, (unc-30 subset), ceh-27, ceh-32, ceh-34"	"GLRDL/R, (I3/g1P)/m4DL"	0	0				
+MSaaaap	MS32	Time 300min MS pharynx	Early lineage	"ceh-13, ceh-27"	"I4/m5DL, x/m7D"	0	0				
+MSaaapp	MS32	Time 300min MS pharynx	Early lineage	"ttx-1, ceh-36"	vpi3D/x	0	0				
+MSaappa	MS32	Time 250min MSxa	Early lineage	"pha-4, nhr-67(weak), cwn-2"		0	0				
+MSapaap	MS32	Time 200min lineage	Early lineage	"pal-1, trajectory continues to M"	x/M	0	0				
+MSpaaaa	MS32	Time 300min MS pharynx	Early lineage	"hlh-3, tbx-2, tbx-7, ceh-32, ceh-34"	"M4/x, m3DR/m4DR"	0	0				
+MSpaaap	MS32	Time 300min MS pharynx	Early lineage	"ceh-27, not ceh-32, ceh-34 or ceh-13, POE"	"I6/M5, m5DR/m6D"	0	0				
+MSpappa	MS32	Time 250min MSxa	Early lineage	"nhr-67, cwn-2, unc-120, hnd-1"	BWM VL15/VR15	0	0				
+MSppaap	MS32	Time 200min lineage	Early lineage	"pal-1, POE"	x/mu int R	0	0				
+MSxaapa	MS32	Time 300min MS pharynx	Early lineage	"ceh-32, ceh-34, tbx-2, tbx-7"		0	0				
+MSxapaa	MS32	Time 300min MS pharynx	Early lineage	"dmd-4, tbx-2, ceh-34"	"m4V/m5V, (g1A/x)/m7V"	0	0				
+MSxapap	MS32	Time 300min MS pharynx	Early lineage	"dmd-4, cnd-1"	"g2/x, m6V/vpi2D"	0	0				
+MSxappp	MS32	Time 200min lineage	Early lineage	tbx-8	BWM V7/9/11/13	0	0				
+MSxpaaa	MS32	Time 200min lineage	Early lineage	"let-381, sfrp-1, unc-39"	"GLR(L or R)/GLRV, BWM D2"	0	0				
+MSxpapa	MS32	Time 200min lineage	Early lineage	"let-381, sfrp-1, ceh-34"	"ccA/ccP, BWM V2"	0	0				
+MSxpapp	MS32	Time 250min MSxp	Early lineage	"tbx-8, unc-39, no let-381"	BWM D4/D1	0	0				
+MSxppaa	MS32	Time 200min lineage	Early lineage	"let-381, POE"	(hmc or x) / (Z4 or Z1)	0	0				
+MSxppap	MS32	Time 200min lineage	Early lineage	"tbx-2, hlh-1, unc-120"	x / BWM V1	0	0				
+MSxpppa	MS32	Time 200min lineage	Early lineage	POE	BWM V4/D6	0	0				
+MSxpppp	MS32	Time 250min MSxa	Early lineage	"nhr-67, unc-120, ceh-13"	BWM D3/D5	0	0				
+MSaaaaaa	MS64	Non-pharyngeal mesoderm	Cell type	"unc-30, let-381"	GLRDL/GLRDR	0	0				
+MSaaaaap	MS64	Time 300min MS pharynx	Early lineage	"hlh-6, pros-1"	"I3/g1P, m4DL"	0	0				
+MSaaaapa	MS64	Time 300min MS pharynx	Early lineage	"pha-2, tbx-2, tbx-7"	I4/m5DL	0	0				
+MSaaaapp	MS64	Time 300min MS pharynx	Early lineage	"ceh-13, pha-4"	x/m7D	0	0				
+MSaaapaa	MS64	Time 300min MS pharynx	Early lineage	"sptf-1, ceh-22"	m3DL/m4L	0	0				
+MSaaappp	MS64	"Time 300min MS pharynx, Pharynx"	"Early lineage, Cell type"	"ttx-1, ceh-36"	vpi3D	1	0				
+MSapaapp	MS64	Time 350min non-pharyngeal mesoderm	Early lineage	"pal-1, time"	M	1	0				
+MSappaaa	MS64	Non-pharyngeal mesoderm	Cell type	"hlh-8, sfrp-1, glb-26, dmd-4"	hmc	1	0	Late hmc after divergence from hmc homolog.			
+MSpaaaaa	MS64	Time 300min MS pharynx	Early lineage	nhr-67	M4/x	0	0				
+MSpaaaap	MS64	Time 300min MS pharynx	Early lineage	"ceh-27, pha-4"	m3DR/m4DR	0	0				
+MSpaaapa	MS64	Time 300min MS pharynx	Early lineage	"ceh-27, ces-1, cnd-1 (in trajectory by t350)"	I6/M5	0	0				
+MSpaaapp	MS64	Time 300min MS pharynx	Early lineage	"ceh-27, tbx-2"	m5DR/m6D	0	0				
+MSpaapaa	MS64	"Time 300min MS pharynx, Pharynx"	"Early lineage, Cell type"	"ceh-32, ceh-34, tbx-7, ngn-1, ces-1"	M1/x	0	0				
+MSpappax	MS64	Non-pharyngeal mesoderm	Cell type	"hlh-1, UMAP connectivity to parent"	BWM VL15 and VR15	1	0				
+MSppaapp	MS64	Time 350min non-pharyngeal mesoderm	Early lineage	"pal-1, time"	mu int R	1	0				
+MSpppaaa	MS64	Non-pharyngeal mesoderm	Cell type	"cex-2, lin-1, rig-3"	hmc homolog	1	0	Late hmc homolog after divergence from hmc.			
+MSxaapap	MS64	Time 300min AB pharynx	Early lineage	"pax-1, lin-12, trajectory to ref-1, aff-1/eff-1"	mc3D(L or R)/(m8 or vpi1)	0	0				
+MSxapaaa	MS64	Time 300min MS pharynx	Early lineage	"ceh-22, pha-2"	m4V/m5V	0	0				
+MSxapaap	MS64	Time 300min MS pharynx	Early lineage	ceh-13	"g1A/x, m7V"	0	0				
+MSxapapa	MS64	Time 300min MS pharynx	Early lineage	"hlh-6, ces-1, ceh-6"	g2/x	0	0				
+MSxapapp	MS64	Time 300min MS pharynx	Early lineage	unc-62	m6V/vpi2D	0	0				
+MSxapppa	MS64	Time 350min non-pharyngeal mesoderm	Early lineage	POE	BWM V7/V9	0	0				
+MSxapppp	MS64	Time 350min non-pharyngeal mesoderm	Early lineage	lin-39	BWM V11/V13	0	0				
+MSxpaaaa	MS64	Time 350min non-pharyngeal mesoderm	Early lineage	unc-30	GLR(L or R)/GLRV	0	0				
+MSxpaaap	MS64	Time 350min non-pharyngeal mesoderm	Early lineage	"unc-120, ceh-34"	BWM D2	1	0				
+MSxpaapa	MS64	NA	NA	NA	x	1	0	Not identified (cell death).			
+MSxpapaa	MS64	Time 350min non-pharyngeal mesoderm	Early lineage	let-381	ccA/ccP	0	0				
+MSxpapap	MS64	Time 350min non-pharyngeal mesoderm	Early lineage	unc-120	BWM V2	1	0				
+MSxpappa	MS64	Time 350min non-pharyngeal mesoderm	Early lineage	no ceh-34	BWM D4	1	0				
+MSxpappp	MS64	Time 350min non-pharyngeal mesoderm	Early lineage	ceh-34	BWM D1	1	0				
+MSxppaaa	MS64	Time 350min non-pharyngeal mesoderm	Early lineage	"POE, trajectory"	hmc or hmc_hom	1	1	UMAP trajectories for hmc and hmc homolog diverge in later embryo times: see annotations MSappaaa and MSpppaaa.			
+MSxppaap	MS64	Time 350min non-pharyngeal mesoderm	Early lineage	ehn-3	Z4 or Z1	1	0				
+MSxppapa	MS64	NA	NA	NA	x	1	0	Not identified (cell death).			
+MSxppapp	MS64	Time 350min non-pharyngeal mesoderm	Early lineage	"ceh-34, time"	BWM V1	1	0				
+MSxpppaa	MS64	Time 300-400min anterior muscle	Early lineage	"POE, trajectory"	BWM V4	1	0	"Includes only late cells. Early cells are not clearly separated from sister MSxpppap, so they are annotated as ""MSxpppax""."			
+MSxpppap	MS64	Time 300-400min anterior muscle	Early lineage	ceh-13	BWM D6	1	0	"Includes only late cells. Early cells are not clearly separated from sister MSxpppaa, so they are annotated as ""MSxpppax""."			
+MSxpppax	MS64	Time 300-400min anterior muscle	Early lineage	Trajectory	BWM V4 and D6	1	1	"Includes only early cells. Late cells are annotated separately as ""MSxpppaa"" and ""MSxpppap""."			
+MSxppppa	MS64	Time 300-400min anterior muscle	Early lineage	ceh-34	BWM D3	1	0	"Includes only late cells. Early cells are not clearly separated from sister MSxppppp, so they are annotated as ""MSxppppx""."			
+MSxppppp	MS64	Time 300-400min anterior muscle	Early lineage	ceh-13	BWM D5	1	0	"Includes only late cells. Early cells are not clearly separated from sister MSxppppa, so they are annotated as ""MSxppppx""."			
+MSxppppx	MS64	Time 300-400min anterior muscle	Early lineage	Trajectory	BWM D3 and D5	1	1	"Includes only early cells. Late cells are annotated separately as ""MSxppppa"" and ""MSxppppp""."			
+MSaaaaaax/MSxpaaaax	MS_gen_7	Non-pharyngeal mesoderm	Cell type	"unc-30, let-381, sfrp-1"	GLR	1	0	Same annotation as GLR in Table S1.			
+MSaaaaapa	MS_gen_7	Pharynx	Cell type	"hlh-6, see note"	I3/g1P	0	0	"Part of cluster in which terminal g1P and g1A were identified (see Table S1). Distinguished from daughter by embryo time. Distinguished from g1A parent (MSxapaapa) by ceh-53, which we observe to be expressed in terminal g1P and g1P parent but not terminal g1A and g1A parent."			
+MSaaaappp/MSxapaapp	MS_gen_7	Pharynx	Cell type	"tnc-2, tni-4, ceh-22, spp-7, W05B10.4"	m7	1	0	Same annotation as pm7 in Table S1.			
+MSaaapapp	MS_gen_7	Pharynx	Cell type	"ref-1, aff-1, pax-1, inx-20, unc-129"	m8	1	0	Same annotation as pm8 in Table S1.			
+MSpaaappp/MSxapappa	MS_gen_7	Pharynx	Cell type	"tnc-2, ser-2, elt-4, W05B10.4"	m6	1	0	Same annotation as pm6 in Table S1.			
+MSxaapapa/ABalpappapp	MS_gen_7	Pharynx	Cell type	"ttx-1, pax-1, agr-1, irx-1"	mc3	1	0	Same annotation as mc3 in Table S1.			
+MSxapaapa	MS_gen_7	Pharynx	Cell type	"hlh-6, see note"	g1A/x	0	0	"Part of cluster in which terminal g1A and g1P were identified (see Table S1). Distinguished from daughter by embryo time. Distinguished from g1P parent (MSaaaaapa) by lack of ceh-53, which we observe to be expressed in terminal g1P and g1P parent but not terminal g1A and g1A parent."			
+MSxapapaa	MS_gen_7	Pharynx	Cell type	"hlh-6, ceh-6, irx-1, dmd-4, gly-15"	g2	1	0	Same annotation as g2 in Table S1.			
+MSxapppax	MS_gen_7	Time 350min non-pharyngeal mesoderm	Early lineage	POE	BWM V7 and V9	1	0				
+MSxappppx	MS_gen_7	Time 350min non-pharyngeal mesoderm	Early lineage	lin-39	BWM V11 and V13	1	0				
+ABaxx	AB8	Time 130min lineage	Early lineage	"tbx-37, tbx-38"		0	0	Could include undifferentiated daughters ABaxxx			
+ABpxp	AB8	Time 130min lineage	Early lineage	"ceh-36, unc-30"		0	0	Could include undifferentiated ABpxpx			
+ABarpx	AB16	Time 130min lineage	Early lineage	"tbx-8, tbx-9, ceh-37"		0	0				
+ABpxax	AB16	Time 130min lineage	Early lineage	"elt-1, not ceh-37, not pal-1"		0	0				
+ABpxpa	AB16	Time 130min lineage	Early lineage	"ceh-36, cnd-1"		0	0				
+ABpxpp	AB16	Time 130min lineage	Early lineage	"ceh-36, ets-7, ceh-13"		0	0				
+ABalaax	AB32	"Time 130min lineage, Time 150min lineage"	Early lineage	"nhr-67,�ceh-32, ref-2"		0	0				
+ABalapx	AB32	"Time 130min lineage, Time 150min lineage"	Early lineage	"mls-2, ref-2, lin-32"		0	0				
+ABalpax	AB32	"Time 130min lineage, Time 150min lineage"	Early lineage	"pha-4, alr-1"		0	0				
+ABalpax/ABaraax	AB32	"Time 130min lineage, Time 150min lineage"	Early lineage	"pha-4, no ceh-51"		0	1	"Extra cells not included in ""ABalpax"" or ""ABaraax"" that could be identified as either ABalpax or ABaraax but could not be narrowed down futher due to a lack of alr-1 or mls-2 expression."			
+ABalppa	AB32	"Time 130min lineage, Time 150min lineage"	Early lineage	"sptf-1, ceh-32"		0	0				
+ABalppp/ABpraaa	AB32	"Time 130min lineage, Time 150min lineage"	Early lineage	unc-39		0	0				
+ABaraax	AB32	"Time 130min lineage, Time 150min lineage"	Early lineage	"pha-4, mls-2"		0	0				
+ABarapa	AB32	"Time 130min lineage, Time 150min lineage"	Early lineage	"pha-4, ceh-27, neither mls-2 nor alr-1"		0	0				
+ABarpaa	AB32	"Time 130min lineage, Time 150min lineage"	Early lineage	"ceh-32, elt-1, no ref-1"		0	0				
+ABarpap/ABplaaa	AB32	Time 250min AB hypodermis	Early lineage	"ref-1, glp-1"		0	0				
+ABarppx	AB32	Time 250min AB hypodermis	Early lineage	"vab-15, ceh-16, tbx-2, early embryo time"		0	0				
+ABpxaap	AB32	"Time 130min lineage, Time 150min lineage"	Early lineage	"elt-1, unc-130, tbx-11"		0	0				
+ABpxapa	AB32	"Time 130min lineage, Time 150min lineage"	Early lineage	"elt-1, ceh-13, irx-1, vab-15"		0	0				
+ABpxapp	AB32	"Time 130min lineage, Time 150min lineage"	Early lineage	"elt-1, ceh-13, nob-1"		0	0				
+ABpxpaa	AB32	Time 150min lineage	Early lineage	"ceh-36, ngn-1, cnd-1"		0	0				
+ABpxpap	AB32	Time 200min ABpxp	Early lineage	ceh-27		0	0				
+ABpxppa	AB32	Time 150min lineage	Early lineage	"ceh-36, ngn-1, cnd-1"		0	0				
+ABpxppp	AB32	Time 150min lineage	Early lineage	"ceh-36, nob-1"		0	0				
+ABalaax/ABalapxa	AB32_or_AB64	"Time 130min lineage, Time 150min lineage"	Early lineage	"unc-39, ceh-32"		0	1	"Extra cells not included in the ""ABalaax"", ""ABalapaa"", or ""ABalappa"" annotations that could be identified as either ABalaax or ABalapxa (or possibly ABalaaxx), but could not be narrowed down further."			
+ABalaaaa	AB64	Time 200min lineage ABax neuron + glia	Early lineage	"nhr-67, sem-2"		0	0	Broken symmetry.			
+ABalaaap	AB64	Time 200min lineage ABax neuron + glia	Early lineage	"sem-2, no nhr-67"		0	0	Broken symmetry.			
+ABalaapa	AB64	Time 200min lineage ABax neuron + glia	Early lineage	"nhr-67, no sem-2"		0	0				
+ABalaapp	AB64	Time 200min lineage ABax neuron + glia	Early lineage	"C05B5.4, sptf-1"		0	0				
+ABalapaa	AB64	Time 200min lineage ABax neuron + glia	Early lineage	"ceh-32, unc-39"		0	0				
+ABalappa	AB64	Time 200min lineage ABax neuron + glia	Early lineage	unc-39		0	0				
+ABalapxp	AB64	Time 200min lineage ABax neuron + glia	Early lineage	mls-2		0	0				
+ABalpaaa/ABarapaa	AB64	Time 200min pharynx	Early lineage	"ceh-27, ceh-32"		0	0				
+ABalpaap/ABaraaap	AB64	Time 200min pharynx	Early lineage	POE		0	0	Trajectory leads to ABalpaapp/ABaraaaap			
+ABalpapa/ABarappa	AB64	Time 200min ABpxp	Early lineage	"ceh-27, ceh-5"		0	0				
+ABalpapp/ABarapap	AB64	Time 200min pharynx	Early lineage	ceh-36		0	0				
+ABalppaa	AB64	Time 200min lineage ABax neuron + glia	Early lineage	"unc-39, sptf-1, ceh-32"		0	0				
+ABalppap/ABarappp	AB64	Time 250min lineage ABala region	Early lineage	cnd-1		0	0				
+ABalpppa/ABpraaaa	AB64	Time 200min hypodermis etc.	Early lineage	"unc-39, alr-1"		0	0				
+ABalpppp/ABpraaap	AB64	Time 200min hypodermis etc.	Early lineage	"sptf-1, no alr-1/unc-39"		0	0				
+ABaraaaa	AB64	Time 200min pharynx	Early lineage	"mls-2, sem-2"		0	0				
+ABaraapx	AB64	Time 200min pharynx	Early lineage	"mls-2, ceh-27"		0	0				
+ABarpaaa	AB64	Time 250min hypodermis	Early lineage	"sem-2, ref-2, tbx-2"		0	0				
+ABarpaap	AB64	Time 250min AB hypodermis	Early lineage	"nhr-25, lin-26, POE"		0	0				
+ABarpapa/ABplaaaa	AB64	Time 200min hypodermis etc.	Early lineage	"mnm-2, lin-32"		0	0				
+ABarpapp/ABplaaap	AB64	Time 200min hypodermis etc.	Early lineage	"nhr-25, POE"		0	0	"Positioned about right in t180 UMAP, but embryo time a little late."			
+ABarppxa	AB64	Time 250min AB hypodermis	Early lineage	"vab-15, tbx-2"		0	0				
+ABarppxp	AB64	Time 250min AB hypodermis	Early lineage	sptf-1		0	0				
+ABplpapp	AB64	Time 200min ABpxp	Early lineage	"nhr-67, unc-130, ceh-6"		0	0				
+ABprpapp	AB64	Time 200min ABpxp	Early lineage	"nhr-67, unc-130"		0	0				
+ABpxaapa	AB64	Time 200min hypodermis etc.	Early lineage	"cnd-1, mnm-2"		0	0				
+ABpxaapp	AB64	Time 200min hypodermis etc.	Early lineage	"pax-3, sptf-1"		0	0				
+ABpxapaa	AB64	Time 200min hypodermis etc.	Early lineage	"lin-32, ztf-11"		0	0				
+ABpxapap	AB64	Time 200min hypodermis etc.	Early lineage	"sptf-1, nob-1, nhr-25"		0	0				
+ABpxappa	AB64	Time 200min hypodermis etc.	Early lineage	"lin-39, ceh-13"		0	0				
+ABpxappp	AB64	Time 200min hypodermis etc.	Early lineage	"ztf-11, nob-1"		0	0				
+ABpxpaaa	AB64	Time 200min ABpxp	Early lineage	mls-2		0	0				
+ABpxpaap	AB64	Time 200min ABpxp	Early lineage	pax-3		0	0				
+ABpxpapa	AB64	Time 200min ABpxp	Early lineage	ztf-11		0	0				
+ABpxppaa	AB64	Time 200min ABpxp	Early lineage	ceh-27		0	0				
+ABpxppap	AB64	Time 200min ABpxp	Early lineage	"ceh-13, cnd-1"		0	0				
+ABpxpppa	AB64	Time 200min ABpxp	Early lineage	irx-1		0	0				
+ABpxpppp	AB64	Time 200min ABpxp	Early lineage	"nhr-67, vab-23"		0	0				
+ABalaaaal	AB128	Time 250min lineage ABala region	Early lineage	"nhr-67, no ceh-27"		0	0	Symmetric with but distinct trajectory from ABalaapaa.			
+ABalaaaar	AB128	Time 250min lineage ABala region	Early lineage	"ceh-27, nhr-67"		0	0				
+ABalaaapx	AB128	Time 250min lineage ABala region	Early lineage	"ref-2, no ceh-27 or nhr-67"		0	0	Symmetric sisters.			
+ABalaapaa	AB128	Time 250min lineage ABala region	Early lineage	"nhr-67, ref-2"		0	0	Symmetric with but distinct from ABalaaaal.			
+ABalaapap/ABalppaap	AB128	Time 250min lineage ABala region	Early lineage	"sptf-1, mls-2"		0	0				
+ABalaappa/ABalppaaa	AB128	Time 250min lineage ABala region	Early lineage	"sptf-1, tbx-7, tbx-2, ref-2, nhr-67"		0	0				
+ABalaappp/ABalapaap	AB128	Time 250min lineage ABala region	Early lineage	"ztf-11, unc-39, lin-32, ceh-32"		0	0	These converging lineages may be separable.			
+ABalapaaa	AB128	Time 250min lineage ABala region	Early lineage	"unc-39, lin-32, ceh-31, sem-2"		0	0				
+ABalapaaa/ABalappap	AB128	Time 200min lineage ABax neuron + glia	Early lineage	unc-39		0	1	"Extra cells not included in ""ABalapaaa"" and ""ABalappap"", which are annotated separately. The UMAP trajectories for these lineages converge, the split to produce ABalapaaap/ABalappapp and ABalapaaaa/ABalappapa. This annotation includes cells after the lineage convergence, but before the subsequent cell division."			
+ABalapapa	AB128	Time 200min lineage ABax neuron + glia	Early lineage	lin-32		0	0				
+ABalappaa	AB128	Time 250min lineage ABala region	Early lineage	"ref-2, ceh-32"		0	0				
+ABalappap	AB128	Time 250min lineage ABala region	Early lineage	unc-39		0	0				
+ABalapppa	AB128	Time 200min lineage ABax neuron + glia	Early lineage	ngn-1		0	0				
+ABalapxpa	AB128	Time 250min lineage ABala region	Early lineage	"F21D5.9, ceh-10"		0	1				
+ABalapxpp	AB128	Time 250min lineage ABala region	Early lineage	"mls-2, ref-2"		0	0				
+ABalpaaaa/ABarapaaa	AB128	Time 300min AB pharynx	Early lineage	"ceh-27, ceh-34, ceh-32"		0	0				
+ABalpaaap/ABarapaap	AB128	Time 300min AB pharynx	Early lineage	ceh-36		0	0				
+ABalpaapa/ABaraaapa	AB128	Time 300min AB pharynx	Early lineage	"ceh-36, ceh-16"		0	0				
+ABalpaapp/ABaraaapp	AB128	Time 300min AB pharynx	Early lineage	"ham-2, sox-2, nhr-25"		0	0				
+ABalpapaa/ABarappaa	AB128	Time 250min Lineage	Early lineage	hlh-3		0	0	ABalp and ABara derived symmetry partners appear to form separate trajectories but not clear which is which based on known markers.			
+ABalpapap/ABarappap	AB128	Time 250min Lineage	Early lineage	ceh-36		0	0	ABalp and ABara derived symmetry partners appear to form separate trajectories but not clear which is which based on known markers.			
+ABalpappa/ABarapapa	AB128	Time 200min pharynx	Early lineage	"ceh-32, lin-12"		0	0				
+ABalpappp/ABarapapp	AB128	Time 200min pharynx	Early lineage	POE		0	0				
+ABalppapa/ABarapppa	AB128	Time 250min lineage ABala region	Early lineage	"ceh-32, ref-2"		0	0				
+ABalppapp/ABarapppp	AB128	Time 250min lineage ABala region	Early lineage	ceh-27		0	0				
+ABalpppaa/ABpraaaaa	AB128	Time 250min Lineage	Early lineage	"sptf-1, ref-2, sox-2"		0	0				
+ABalpppap/ABpraaaap	AB128	Time 250min Lineage	Early lineage	"unc-39, no sptf-1"		0	0				
+ABalppppa/ABpraaapa	AB128	Time 250min Lineage	Early lineage	"ceh-37, hlh-3, no nhr-67"		0	0				
+ABalppppp/ABpraaapp	AB128	Time 250min Lineage	Early lineage	"nhr-67, tbx-2, ceh-37, hlh-3 persists"		0	0				
+ABaraaaaa	AB128	Time 300min AB pharynx	Early lineage	"ceh-34, ref-2"		0	0				
+ABaraaaap	AB128	Time 300min AB pharynx	Early lineage	POE		0	0				
+ABaraapxa	AB128	Time 300min AB pharynx	Early lineage	"ceh-34, ngn-1, ceh-16"		0	0				
+ABaraapxp	AB128	Time 300min AB pharynx	Early lineage	"tbx-2, ref-2, ceh-36"		0	0				
+ABarpaaaa	AB128	Time 250min hypodermis	Early lineage	"later mls-2, ref-2, ceh-31, ceh-32"		0	0				
+ABarpaaap	AB128	Time 250min hypodermis	Early lineage	"mls-2, ref-2, ceh-31, ceh-32"		0	0				
+ABarpaapx	AB128	Time 300min AB hypodermis	Early lineage	"elt-1, nhr-25, tbx-8"		0	0				
+ABarpapaa/ABplaaaaa	AB128	Time 250min hypodermis	Early lineage	"mnm-2, ceh-31, lin-32"		0	0				
+ABarpapap/ABplaaaap	AB128	Time 250min hypodermis	Early lineage	"elt-1, nhr-25, ref-1"		0	0				
+ABarpappa/ABplaaapa	AB128	Time 250min hypodermis	Early lineage	"sptf-1, unc-130, trajectory to hyp5"		0	0				
+ABarpappp/ABplaaapp	AB128	Time 250min hypodermis	Early lineage	"elt-1, ceh-16, unc-130"		0	0				
+ABarppxaa	AB128	Time 300min AB hypodermis	Early lineage	"sptf-1, ceh-16, tbx-2"		0	0				
+ABarppxap	AB128	Time 300min AB hypodermis	Early lineage	"tbx-8, ceh-13"		0	0				
+ABarppxpa	AB128	Time 300min AB hypodermis	Early lineage	"ceh-16, ceh-13, no pal-1"		0	0				
+ABarppxpp	AB128	Time 300min AB hypodermis	Early lineage	"ham-2, pal-1, ceh-16, ceh-13"		0	0				
+ABplpappa	AB128	Time 250min Lineage	Early lineage	"ceh-6, pros-1"		0	0				
+ABplpappp	AB128	Time 250min Lineage	Early lineage	"ceh-6, pal-1, pha-4"		0	0				
+ABprpappa	AB128	Time 250min Lineage	Early lineage	"ces-1, hlh-19"		0	0				
+ABprpappp	AB128	Time 250min Lineage	Early lineage	"pax-3, pha-4"		0	0				
+ABpxaapaa	AB128	Time 250min Lineage	Early lineage	"ref-2, alr-1"		0	0				
+ABpxaapap	AB128	Time 250min Lineage	Early lineage	"unc-30, ztf-11"		0	0				
+ABpxaappa	AB128	Time 250min hypodermis	Early lineage	"mnm-2, elt-1"		0	0				
+ABpxaappp	AB128	Time 250min hypodermis	Early lineage	"vab-3, tbx-11, elt-1"		0	0				
+ABpxapaaa	AB128	Time 250min hypodermis	Early lineage	"lin-32, ceh-31, sem-2, dpy-31"		0	0				
+ABpxapaap	AB128	Time 250min hypodermis	Early lineage	"sptf-1, nhr-25, elt-1"		0	0				
+ABpxapapa	AB128	Time 300min AB hypodermis	Early lineage	"sptf-1, elt-1"		0	0				
+ABpxapapp	AB128	Time 300min AB hypodermis	Early lineage	"sptf-1, unc-130, nob-1"		0	0				
+ABpxappaa	AB128	Time 300min AB hypodermis	Early lineage	"lin-39, more ceh-13"		0	0				
+ABpxappap	AB128	Time 300min AB hypodermis	Early lineage	"pal-1, less ceh-13"		0	0				
+ABpxapppa	AB128	Time 300min AB hypodermis	Early lineage	"nob-1, hlh-14"		0	0				
+ABpxapppp	AB128	Time 250min hypodermis	Early lineage	"nob-1, elt-1, nhr-25"		0	0				
+ABpxpaaaa	AB128	Time 250min Lineage	Early lineage	"hlh-16, ngn-1, ceh-37"		0	0				
+ABpxpaaap	AB128	Time 250min Lineage	Early lineage	"cnd-1, ceh-32"		0	0				
+ABpxpaapa	AB128	Time 250min Lineage	Early lineage	"ref-2, mnm-2, hlh-16"		0	0				
+ABpxpaapp	AB128	Time 250min Lineage	Early lineage	irx-1		0	0				
+ABpxpapaa	AB128	Time 250min Lineage	Early lineage	"ref-2, hlh-16, ngn-1"		0	0				
+ABpxpapap	AB128	Time 250min Lineage	Early lineage	"ceh-27, ceh-36 persists, hlh-3 later"		0	0				
+ABpxppaaa	AB128	Time 250min Lineage	Early lineage	"ceh-27, F21D5.9, ngn-1 persists"		0	0				
+ABpxppaap	AB128	Time 250min Lineage	Early lineage	"ceh-27, ceh-36 persists"		0	0				
+ABpxppapa	AB128	Time 250min Lineage	Early lineage	sox-2		0	0				
+ABpxppapp	AB128	Time 250min Lineage	Early lineage	"ceh-13, cnd-1 persists"		0	0				
+ABpxpppaa	AB128	Time 250min Lineage	Early lineage	"nob-1, F21D5.9, sox-2, irx-1"		0	0				
+ABpxpppap	AB128	Time 250min Lineage	Early lineage	"pal-1, nhr-25, irx-1"		0	0				
+ABpxppppa	AB128	Time 250min Lineage	Early lineage	"sox-2, vab-23"		0	0				
+ABpxppppp	AB128	Time 250min Lineage	Early lineage	"pal-1, ham-2, vab-23"		0	0				
+ABalaaaala/ABalaapaaa	AB256	Time 300min neuron + glia left region	Early lineage	ttx-3	x/AIN	0	0				
+ABalaaaalp/ABalaapaap	AB256	Time 300min neuron + glia left region	Early lineage	"pros-1, nhr-25, no ceh-32"	x/ILsh	0	0				
+ABalaaaarx	AB256	Time 300min neuron + glia left region	Early lineage	"ceh-27, ceh-32"	x/RME	0	0				
+ABalaaapal/ABalaaappr	AB256	Time 300min neuron + glia left region	Early lineage	"ham-2, ngn-1"	ILso/AVD	0	0				
+ABalaaapar/ABalaaappl	AB256	Time 300min neuron + glia left region	Early lineage	"pros-1, nhr-25, ceh-32"	x/ILshD	0	0				
+ABalaapapa/ABalppaapa	AB256	NA	NA	NA	x	1	0	Not identified (cell death).			
+ABalaapapp/ABalppaapp	AB256	Time 300min neuron + glia left region	Early lineage	"mls-2, sptf-1, nhr-25, egl-1"	x/CEPsoV	0	0				
+ABalaappaa/ABalppaaaa	AB256	NA	NA	NA	x	1	0	Not identified (cell death).			
+ABalaappap/ABalppaaap	AB256	Time 300min neuron + glia left region	Early lineage	"ref-2, tbx-7, sptf-1"	AVA/OLQsoV	0	0				
+ABalaapppa/ABalapaapa	AB256	Time 300min neuron + glia left region	Early lineage	"sptf-1, ces-1, ceh-8"	RIA/x	0	0				
+ABalaapppp/ABalapaapp	AB256	Time 300min neuron + glia left region	Early lineage	"sptf-1, lin-32, unc-39"	"IL1/x, IL2"	0	0	"Annotation includes early cells only. Late cells converge to a common transcriptomic profile with other IL1-IL2 neuroblast and are annotated as ""ABalapxppa/ABalaapppp/ABalapaapp/ABalppappp/ABarappppp""."			
+ABalapaaaa/ABalappapa	AB256	Time 300min neuron + glia left region	Early lineage	"ngn-1, ceh-6, aha-1"	AVH/x	0	0				
+ABalapaaap/ABalappapp	AB256	Time 300min neuron + glia left region	Early lineage	ham-2	CAN/OLLso	0	0				
+ABalapapaa	AB256	NA	NA	NA	x	1	0	Not identified (cell death).			
+ABalappaap	AB256	Non-ciliated neurons	Cell type	See note	RID/x	0	0	Forms a continuous UMAP trajectory with terminal RID (see Table S1). Distinguished from daughter by embryo time.			
+ABalapppaa	AB256	Time 300min neuron + glia left region	Early lineage	"ces-1, ngn-1"	ALA/RMED	0	0				
+ABalapxpap	AB256	Time 300min neuron + glia left region	Early lineage	"hlh-3, ceh-32, lin-32"	"OLQD/x, URYD"	0	0	"Annotation includes early ABalapxpap cells only. Later ABalapxpap cells converge with ABpxpaaapp to a common transcriptomic profile and are annotated as ""ABalapxpap/ABpxpaaapp""."			
+ABalapxpap/ABpxpaaapp	AB256	Ciliated neurons	Cell type	See note.	"OLQ/x, URY"	0	1	"Annotation includes late ABalapxpap and ABpxpaaapp cells after they converge to a common transcriptomic profile. Early cells are annotated separately in the ""ABalapxpap"" and ""ABpxpaaapp"" annotations."			
+ABalapxppa	AB256	Time 300min neuron + glia left region	Early lineage	"mls-2, ref-2, lin-32, no sptf-1"	"IL1D/x, IL2D"	0	0	"Annotation includes early cells only. Late cells converge to a common transcriptomic profile with other IL1-IL2 neuroblast and are annotated as ""ABalapxppa/ABalaapppp/ABalapaapp/ABalppappp/ABarappppp""."			
+ABalapxppa/ABalaapppp/ABalapaapp/ABalppappp/ABarappppp	AB256	Ciliated neurons	Cell type	See note.	"IL1/x, IL2"	0	1	Annotation includes late cells from the listed IL1-IL2 neuroblast lineages after they converge to a common transcriptomic profile. Early cells from the listed lineages are annotated separately.			
+ABalapxppp	AB256	Time 300min neuron + glia left region	Early lineage	"mls-2, ref-2, ngn-1"	AVJ/CEPsoD	0	0				
+ABalpaaaaa/ABarapaaaa	AB256	Time 300min AB pharynx	Early lineage	"ceh-32, ceh-27"	e3V/m2V	0	0				
+ABalpaaaap/ABarapaaap	AB256	Time 300min AB pharynx	Early lineage	"eyg-1, ceh-27, ceh-34"	m1V/x	0	0				
+ABalpaaapa/ABarapaapa	AB256	Time 300min AB pharynx	Early lineage	ceh-34	m2/x	0	0				
+ABalpaaapp/ABarapaapp	AB256	Time 300min AB pharynx	Early lineage	ceh-36 persists	(x or m3R)/MC	0	0				
+ABalpaapaa/ABaraaapaa	AB256	Time 300min AB pharynx	Early lineage	"POE, ceh-16 persists"	arc_post_D/e2D	0	0				
+ABalpaapap/ABaraaapap	AB256	Time 300min AB pharynx	Early lineage	tbx-2	mc1D/(m3 or m4)	0	0				
+ABalpaappa/ABaraaappa	AB256	Time 300min AB pharynx	Early lineage	"pha-4, sox-2, ham-2"	(arc_ant_D or arc_post_D)/arc_post_V	0	0				
+ABalpaappp	AB256	Time 300min AB pharynx	Early lineage	"ceh-27, ham-2"	hyp1D/hyp2D 	0	0				
+ABalpapaaa	AB256	Time 300min neuron + glia right region	Early lineage	"hlh-19, ces-1"	RIP/hyp2V	0	0				
+ABalpapaap/ABarappaap	AB256	Time 300min neuron + glia right region	Early lineage	"pha-4, nhr-25, ham-2"	(arc ant V or hyp1 V)/x	0	0				
+ABalpapapa/ABarappapa	AB256	Time 300min neuron + glia right region	Early lineage	cnd-1	RMDD/(x/SMBD)	0	0				
+ABalpapapp/ABarappapp	AB256	Time 300min neuron + glia right region	Early lineage	"ceh-6, eyg-1"	(x or DB2)/SMBV	0	0				
+ABalpappaa/ABarapapaa	AB256	Time 300min AB pharynx	Early lineage	"pros-1, atf-2, hlh-3, ceh-34"	x/(I2/x)	0	0				
+ABalpappap	AB256	Time 300min AB pharynx	Early lineage	unc-130	e2V/mc3V	0	0				
+ABalpapppa/ABarapappa	AB256	Time 300min AB pharynx	Early lineage	"unc-86, ceh-32, ceh-36, ces-1, ceh-34"	I1/x	0	0				
+ABalpapppp/ABarapappp	AB256	Time 300min AB pharynx	Early lineage	"ceh-36, tbx-2"	(mc1V or mc2V)/m3V	0	0				
+ABalppapaa/ABarapppaa	AB256	Time 300min neuron + glia left region	Early lineage	"ceh-32, ref-2"	RMDV/ILshV	0	0				
+ABalppapap/ABarapppap	AB256	Time 300min neuron + glia left region	Early lineage	"ham-2, ceh-27, unc-130, hlh-3"	SIAD/ILsoV	0	0				
+ABalppappa/ABarappppa	AB256	Time 300min neuron + glia left region	Early lineage	"sptf-1, ces-1"	SMDV/BAG	0	0				
+ABalppappp/ABarappppp	AB256	Time 300min neuron + glia left region	Early lineage	"sptf-1, lin-32, hlh-3"	"IL1V/x, IL2V"	0	0	"Annotation includes early cells only. Late cells converge to a common transcriptomic profile with other IL1-IL2 neuroblast and are annotated as ""ABalapxppa/ABalaapppp/ABalapaapp/ABalppappp/ABarappppp""."			
+ABalpppaaa/ABpraaaaaa	AB256	Time 300min neuron + glia left region	Early lineage	"ceh-31, F21D5.9"	AVE/OLQshV	0	0				
+ABalpppaap/ABpraaaaap	AB256	Time 300min neuron + glia left region	Early lineage	"nhr-25, ceh-32"	OLLsh/x	0	0				
+ABalpppapa/ABpraaaapa	AB256	Time 300min neuron + glia left region	Early lineage	"ttx-1 (literature - AFD), mls-2, sptf-1"	RMD/AFD	0	0				
+ABalpppapp/ABpraaaapp	AB256	Time 300min neuron + glia left region	Early lineage	ttx-3	x/(ASK/x)	0	0				
+ABalppppaa/ABpraaapaa	AB256	Time 300min neuron + glia left region	Early lineage	"hlh-4, lin-11"	ADL/x	0	0				
+ABalppppap/ABpraaapap	AB256	Time 300min neuron + glia left region	Early lineage	ceh-32 persists	(OLL/x)/x	0	0				
+ABalpppppa/ABpraaappa	AB256	Time 300min neuron + glia left region	Early lineage	ces-1	ADF/AWB	0	0				
+ABalpppppp/ABpraaappp	AB256	Time 300min neuron + glia left region	Early lineage	"irx-1, nhr-67, sptf-1"	"ASE/x, ASJ/AUA"	0	0				
+ABaraaaaax	AB256	Time 300min AB pharynx	Early lineage	ceh-34	e1V/m1	0	0				
+ABaraaaapa	AB256	Time 300min AB pharynx	Early lineage	ceh-34 later	x/e1D	0	0				
+ABaraaaapp	AB256	NA	NA	NA	x	1	0	Not identified (cell death).			
+ABaraaappp	AB256	Time 300min AB pharynx	Early lineage	"ceh-27, ham-2, nhr-25"	arc_ant_D/hyp1D	0	0				
+ABaraapaaa	AB256	Time 300min AB pharynx	Early lineage	eyg-1 persists	e3D/m1D	0	0				
+ABaraappaa	AB256	Time 300min AB pharynx	Early lineage	"ngn-1, aha-1"	MI/m1D	0	0				
+ABaraapxap	AB256	Time 300min AB pharynx	Early lineage	"eyg-1 persists, tbx-2, ceh-36"	m2D/mc2D	0	0				
+ABaraapxpa	AB256	Time 300min AB pharynx	Early lineage	"unc-86, pha-2, tbx-2"	(NSM/x)/m5	0	0				
+ABaraapxpp	AB256	Time 300min AB pharynx	Early lineage	"mnm-2 (literature), tbx-2, ref-2"	M2/M3	0	0				
+ABarapapap	AB256	Time 300min AB pharynx	Early lineage	POE	arc post V/I5	0	0				
+ABarappaaa	AB256	Time 300min neuron + glia right region	Early lineage	"hlh-19, ces-1, hlh-3"	RIP/x	0	0				
+ABarpaaaaa	AB256	Time 300min neuron + glia left region	Early lineage	ham-2	OLQsoD/OLQsoD	0	0				
+ABarpaaaap/ABarpaaapa	AB256	Time 300min neuron + glia left region	Early lineage	pros-1	OLQshD/CEPshD	0	0				
+ABarpaapaa	AB256	Time 350min hypodermis	Early lineage	trajectory to hyp6	hyp6	1	0	"Includes late cells only, after hyp6 diverges from hyp7. Earlier cells are annotated as ""ABarpaapxx""."			
+ABarpaapap/ABarpaappx	AB256	Time 350min hypodermis	Early lineage	trajectory to hyp7	3x hyp7	1	0	"Includes late cells only, after hyp6 diverges from hyp7. Earlier cells are annotated as ""ABarpaapxx""."			
+ABarpaapxx	AB256	Time 300min AB hypodermis	Early lineage	tbx-8	hyp6 and 3x hyp7	1	1	"Includes early cells only. Later in this lineage's lifespan, hyp6 and hyp7 diverge and are annotated as ""ABarpaapaa"" and ""ABarpaapap/ABarpaappx"" respectively."			
+ABarpapaaa/ABplaaaaaa	AB256	Time 300min neuron + glia left region	Early lineage	"ceh-31, sem-2, pros-1"	URAD/x(CEMD)	0	0				
+ABarpapaap/ABplaaaaap	AB256	Time 300min neuron + glia left region	Early lineage	lin-32	x/(CEPD/URX)	0	0				
+ABarpapapx/ABplaaaapx	AB256	Time 300min AB hypodermis	Early lineage	POE	hyp4 (L) / hyp6 (R); hyp6	1	0				
+ABarpappaa/ABplaaapaa	AB256	Glia and excretory cells	Cell type	"eak-3, sdf-9, eak-6"	XXX	1	0	Same annotation as XXX in Table S1.			
+ABarpappap/ABplaaapap	AB256	Time 300min AB hypodermis	Early lineage	"unc-130, ceh-32, aff-1"	hyp5	1	0				
+ABarpapppx/ABplaaappx	AB256	Time 300min AB hypodermis	Early lineage	unc-130	H0 or H1	1	0				
+ABarppxaaa	AB256	Glia and excretory cells	Cell type	"aff-1, unc-62, POE w.r.t. other sheath cells."	ADEsh	1	0	Same annotation as ADEsh in Table S1.			
+ABarppxaap	AB256	Time 300min AB hypodermis	Early lineage	"ceh-16, sptf-1, tbx-2, lin-26"	H2	1	0				
+ABarppxapa	AB256	Time 300min AB hypodermis	Early lineage	elt-3	hyp7	1	0				
+ABarppxapp	AB256	"Time 300min neuron + glia right region, Time 300min AB hypodermis"	Early lineage	"ceh-13, cwn-2, unc-62, unc-86, mec-7"	ALM/BDU	0	0				
+ABarppxpax	AB256	Time 300min AB hypodermis	Early lineage	ceh-13	V1 and V2	1	0				
+ABarppxppa	AB256	Time 300min AB hypodermis	Early lineage	lin-39	V4	1	0				
+ABarppxppp	AB256	Time 300min AB hypodermis	Early lineage	mab-5	V6	1	0				
+ABplpappaa	AB256	Time 300min neuron + glia right region	Early lineage	"pros-1, ceh-6, unc-130"	RMEV/exc canal	0	0				
+ABplpappap	AB256	NA	Early lineage	NA	x	1	0	Not identified (cell death).			
+ABplpapppa	AB256	"Time 300min neuron + glia right region, Rectal cells"	"Early lineage, Cell type"	"nhr-25, pal-1, pha-4"	K/K'	0	0				
+ABplpapppp	AB256	Time 300min rectal	Early lineage	"pal-1, unc-6"	PVT/rect_D	0	0				
+ABprpappaa	AB256	Time 300min neuron + glia right region	Early lineage	"hlh-19, ces-1"	RIH/AVL	0	0				
+ABprpappap	AB256	Time 300min neuron + glia right region	Early lineage	"ceh-6, ceh-36"	RIS/DB4	0	0				
+ABprpapppa	AB256	Time 300min neuron + glia right region	Early lineage	"nhr-67, ces-1, no pal-1"	RIR/AVG	0	0				
+ABprpapppp	AB256	Time 300min rectal	Early lineage	pha-4	virR/virL	0	0				
+ABpxaapaaa	AB256	Time 300min neuron + glia left region	Early lineage	"ceh-32, nhr-25, ham-2, ref-2 (persists)"	hyp3/ILsoD	0	0				
+ABpxaapaap	AB256	Time 300min neuron + glia left region	Early lineage	"nhr-67, pros-1"	URB/AMsh	0	0				
+ABpxaapapa	AB256	Time 300min neuron + glia left region	Early lineage	"lin-11, hlh-3, ces-1, unc-130, ztf-11"	AWA/ASG	0	0				
+ABpxaapapp	AB256	Time 300min neuron + glia left region	Early lineage	"ztf-11, no ces-1 or unc-130 or lin-11"	AIB/(ASI/x)	0	0				
+ABpxaappaa	AB256	Time 300min AB hypodermis	Early lineage	ceh-32	hyp4	1	0				
+ABpxaappap	AB256	Time 300min AB hypodermis	Early lineage	tbx-11	hyp6	1	0				
+ABpxaapppa	AB256	Time 300min AB hypodermis	Early lineage	irx-1	hyp7	1	0				
+ABpxaapppp	AB256	Time 300min AB hypodermis	Early lineage	"ceh-13, tbx-2, tbx-11"	hyp7	1	0				
+ABpxapaaaa	AB256	"Time 300min neuron + glia left region, Touch receptors"	"Early lineage, Cell type"	"dpy-31(p), daf-19"	x/(ADE/ADA)	0	0				
+ABpxapaaap	AB256	"Time 300min neuron + glia left region, Touch receptors"	"Early lineage, Cell type"	"ceh-31, unc-86, hlh-3"	(FLP/AIZ)/RMG	0	0				
+ABpxapaapa	AB256	Time 300min AB hypodermis	Early lineage	lin-12	G2 and W	1	0	We count these as terminal cells since they do not divide further before hatching.			
+ABpxapaapp	AB256	Time 300min AB hypodermis	Early lineage	"pax-3, ceh-13"	P1 and P2	1	0				
+ABpxapapaa	AB256	Time 300min AB hypodermis	Early lineage	"ceh-16, vab-1"	Q and V5	1	0				
+ABpxapapap	AB256	Time 300min AB hypodermis	Early lineage	"pax-3, mab-5"	P9 and P10	1	0				
+ABpxapappa	AB256	Time 300min AB hypodermis	Early lineage	"pax-3, unc-130"	P11 and P12	1	0				
+ABpxapappp	AB256	"Time 300min neuron + glia right region, Touch receptors"	"Early lineage, Cell type"	"egl-5, unc-86, mec-7, hlh-3"	x/((PLM/ALN)/x)	0	0				
+ABpxappaaa	AB256	Time 300min AB hypodermis	Early lineage	"ceh-13, lin-39"	P3 and P4	1	0				
+ABpxappaap	AB256	Time 300min AB hypodermis	Early lineage	"lin-39, no ceh-13"	P5 and P6	1	0				
+ABpxappapa	AB256	Time 300min AB hypodermis	Early lineage	"lin-39, ceh-16"	V3	1	0				
+ABpxappapp	AB256	Time 300min AB hypodermis	Early lineage	mab-5	P7 and P8	1	0				
+ABpxapppaa	AB256	Non-ciliated neurons	Cell type	"hlh-14, vab-15, lin-11, lack of (pal-1, egl-5, egl-43)"	PVQ/x	0	0	UMAP trajectory connects to terminal PVQ.			
+ABpxapppap	AB256	Time 300min neuron + glia right region	Early lineage	"hlh-14, ces-1, nob-1"	x/(HSN/PHB)	0	0				
+ABpxappppa	AB256	Time 350min hypodermis	Early lineage	"php-3, unc-130, mab-9"	hyp7	1	0				
+ABpxappppp	AB256	Hyp_Glia_t350	Early lineage	"psa-3, ceh-16, tlp-1, php-3, elt-1"	T	1	0	Same annotation as in Table S1.			
+ABpxpaaaaa	AB256	Time 300min neuron + glia right region	Early lineage	"ngn-1, ces-1"	SAAV/AWC	0	0				
+ABpxpaaaap	AB256	Time 300min neuron + glia right region	Early lineage	"ceh-6, unc-130, ceh-13, nhr-25"	(exc duct or G1 pore)/DB1 or DB3	0	0				
+ABpxpaaapa	AB256	Time 300min neuron + glia right region	Early lineage	pros-1	URAV/CEPshV	0	0				
+ABpxpaaapp	AB256	Time 300min neuron + glia right region	Early lineage	"hlh-3, ceh-32, lin-32"	(OLQV/x)/URYV	0	0	"Annotation includes early ABpxpaaapp cells only. Later ABpxpaaapp cells converge with ABalapxpap to a common transcriptomic profile and are annotated as ""ABalapxpap/ABpxpaaapp""."			
+ABpxpaapaa	AB256	Time 300min neuron + glia right region	Early lineage	"ceh-31, mnm-2, ces-1"	RIV/AVB	0	0				
+ABpxpaapap	AB256	Time 300min neuron + glia right region	Early lineage	"ceh-31, mnm-2, ham-2, irx-1"	AMso/x(CEMV)	0	0				
+ABpxpaappa	AB256	Time 300min neuron + glia right region	Early lineage	"irx-1, ces-1, hlh-3"	ASH/RIB	0	0				
+ABpxpaappp	AB256	Time 300min neuron + glia right region	Early lineage	"irx-1, ceh-31, cnd-1"	AIM/(CEPV/x)	0	0				
+ABpxpapaaa	AB256	Time 300min neuron + glia right region	Early lineage	"ttx-3, ces-1, hlh-3"	SMDD/AIY	0	0				
+ABpxpapaap	AB256	Time 300min neuron + glia right region	Early lineage	ngn-1	SIAD/SIBV	0	0				
+ABpxpapapa	AB256	Time 300min neuron + glia right region	Early lineage	"lim-6, ref-2"	exc gland/AVK	0	0				
+ABpxpapapp	AB256	Time 300min neuron + glia right region	Early lineage	"ngn-1, ceh-6, eyg-1, lin-12"	SIAV/(DB5 or DA8)	0	0				
+ABpxppaaaa	AB256	Time 300min neuron + glia right region	Early lineage	"aha-1, F21D5.9, irx-1, ngn-1, hlh-13"	SIBD/(x/RIC)	0	0				
+ABpxppaaap	AB256	NA	NA	NA	x	1	0	Not identified (cell death).			
+ABpxppaapa	AB256	Time 300min neuron + glia right region	Early lineage	"lin-11, ces-1, ceh-36 (early)"	x/RIM	0	0				
+ABpxppaapp	AB256	Time 300min neuron + glia right region	Early lineage	"mls-2, ceh-27, ceh-6, hlh-3"	AIA/DB(6 or 7)	0	0				
+ABpxppapaa	AB256	Time 300min neuron + glia right region	Early lineage	"ceh-6, unc-3, lin-12"	"SABV/RIF, (SABD or DA1)"	0	0				
+ABpxppapap	AB256	Time 300min neuron + glia right region	Early lineage	"pal-1, cnd-1, unc-3"	DA(2 or 3)/DA(4 or 5)	0	0				
+ABpxppappa	AB256	Time 300min neuron + glia right region	Early lineage	"ces-1, unc-30"	RIG/DD(1 or 2)	0	0				
+ABpxppappp	AB256	Time 300min neuron + glia right region	Early lineage	"pal-1, cnd-1, unc-30"	DD(3 or 4)/DD(5 or 6)	0	0				
+ABpxpppaaa	AB256	Time 300min neuron + glia right region	Early lineage	"irx-1, nob-1, ceh-6, ref-2"	(DA9 or Y)/DA(6 or 7)	0	0				
+ABpxpppaap	AB256	Time 300min neuron + glia left region	Early lineage	"hlh-3, pal-1, ztf-11"	"PVC/LUA, PHA"	0	0				
+ABpxpppapa	AB256	Time 300min neuron + glia right region	Early lineage	"pal-1, irx-1, egl-1, nhr-25, lin-26"	PHsh/hyp(8 or 9)	0	0				
+ABpxpppapp	AB256	NA	NA	NA	x	1	0	Not identified (cell death).			
+ABpxppppaa	AB256	"Time 300min neuron + glia right region, Rectal cells"	"Early lineage, Cell type"	"egl-20(weak), nob-1"	PVP/rect V	0	0				
+ABpxppppap	AB256	"Time 300min neuron + glia right region, Rectal cells"	"Early lineage, Cell type"	"pal-1, ceh-6, a little egl-38"	U/F or B/DVA	0	0				
+ABpxpppppa	AB256	Time 300min neuron + glia right region	Early lineage	"unc-120, hnd-1, hlh-8, cog-1"	mu int L/anal depressor or bwm/sphincter	0	0				
+ABpxpppppp	AB256	Time 300min neuron + glia right region	Early lineage	"nhr-67, vab-23, pal-1, nhr-25, lin-26, lin-44"	spike/hyp10	0	0				
+ABalaaaalal/ABalaapaaar	AB_gen_9	Non-ciliated neurons	Cell type	"ttx-3, mgl-1, K07C5.9, ast-1"	AIN	1	0	Same annotation as in Table S1.			
+ABalaaapalr/ABalaaapprl	AB_gen_9	Non-ciliated neurons	Cell type	"unc-42, unc-3, unc-17, rig-5, glr-1, glr-2, nmr-2"	AVD	1	0	Same annotation as in Table S1.			
+ABalaappapa/ABalppaaapa	AB_gen_9	Non-ciliated neurons	Cell type	"acc-1, fax-1, unc-42, unc-3, flp-18, acr-16, acr-15, rig-3, gpa-14, glr-1, glr-2, nmr-2, unc-3"	AVA	1	0	Same annotation as in Table S1.			
+ABalaapppaa/ABalapaapaa	AB_gen_9	Non-ciliated neurons	Cell type	"glr-3, glr-6"	RIA	1	0	Same annotation as in Table S1.			
+ABalapaaaaa/ABalappapaa	AB_gen_9	Non-ciliated neurons	Cell type	"unc-42, lin-11, hlh-34, ceh-6, flp-12, pdf-1"	AVH	1	0	Same annotation as in Table S1.			
+ABalapaaapa/ABalappappa	AB_gen_9	Non-ciliated neurons	Cell type	"pks-1, ceh-10, ace-3, acy-2"	CAN	1	0	Same annotation as in Table S1.			
+ABalappaapa	AB_gen_9	Non-ciliated neurons	Cell type	"unc-3, ceh-10, lim-4, pdf-1"	RID	1	0	Same annotation as in Table S1.			
+ABalapppaaa	AB_gen_9	Non-ciliated neurons	Cell type	"flp-24, ceh-17, des-2, deg-3, snf-11, flp-13"	ALA	1	0	Same annotation as in Table S1.			
+ABalaaaarxp/ABalapppaap/ABplpappaaa	AB_gen_9	Non-ciliated neurons	Cell type	"ceh-32, unc-25, unc-46, snf-11, sox-2, ser-2"	RME	1	0	Same annotation as in Table S1.			
+ABalapxpapa/ABpxpaaappa	AB_gen_9	Ciliated neurons	Cell type	See note.	OLQ/x	0	0	Forms a continuous UMAP trajectory with terminal OLQ. Distinguished from daughter by embryo.time.			
+ABalapxppaa/ABalaappppa/ABalapaappa/ABalppapppa/ABarapppppa	AB_gen_9	Ciliated neurons	Cell type	See note.	IL1/x	0	0	Forms a continuous UMAP trajectory with terminal IL1. Distinguished from daughter by embryo time. Distinguished from IL2 by lack of unc-86.			
+ABalapxppap/ABalaappppp/ABalapaappp/ABalppapppp/ABarapppppp	AB_gen_9	Ciliated neurons	Cell type	"tba-6, klp-6, cil-7, agr-1, sox-2"	IL2	1	0	Same annotation as in Table S1.			
+ABalapxpppa	AB_gen_9	Non-ciliated neurons	Cell type	"unc-42, lin-11, glr-1"	AVJ	1	0	Same annotation as in Table S1.			
+ABalapxpppp/ABalaapappp/ABalppaappp	AB_gen_9	Glia and excretory cells	Cell type	"mls-2, inx-12, inx-13"	CEPso	1	0	Same annotation as in Table S1.			
+ABalpaapaaa/ABalpaappap/ABaraaapaaa/ABaraaappax/ABarapapapa	AB_gen_9	Pharynx	Cell type	"inx-12, let-23"	Posterior arcades	1	0	Same annotation as in Table S1.			
+ABalpaapapa/ABaraaapapa/ABalpappppa	AB_gen_9	Pharynx	Cell type	"ttx-1, pax-1, agr-1, ceh-45, ceh-2"	mc1	1	0	Same annotation as in Table S1.			
+ABalpaapppx/ABalpapaaap/ABaraaapppp	AB_gen_9	Pharynx	Cell type	"mlt-11, mlt-8, slt-1, nhr-25, nhr-67"	hyp1D and hyp2	1	0	"We have tentatively identified hyp1V in a separate cell cluster, suggesting that this annotation only includes hyp1D and hyp2. See note for lineage ""ABalpapaapa/ABarappaapa"". This distinction is not high-confidence however, so this annotation may in fact include hyp1V as well."			
+ABalpapaapa/ABarappaapa	AB_gen_9	Glia and excretory cells	Cell type	See note.	hyp1V and arc ant V	1	0	"This cluster forms a continuous UMAP trajectory with the parent lineage of hyp1V / arc ant V, ABalpapaap/ABarappaap. This annotation is not high-confidence however, as hyp1D and arc ant D were separately identified in the ""Pharynx"" UMAP."			
+ABalpapapaa/ABalppapaaa/ABalpppapad/ABarappapaa/ABarapppaaa/ABpraaaapad	AB_gen_9	Non-ciliated neurons	Cell type	"lad-2, acc-1, unc-42, glr-1, glr-4, glr-5,
+ceh-6, mgl-1, unc-7, ast-1"	RMD	1	0	Same annotation as in Table S1.			
+ABalppappap/ABarappppap	AB_gen_9	Ciliated neurons	Cell type	"gcy-9, gcy-31, gcy-33"	BAG	1	0	Same annotation as in Table S1.			
+ABalpppaaaa/ABpraaaaaaa	AB_gen_9	Non-ciliated neurons	Cell type	"fax-1, unc-42, unc-3, glr-1, glr-2, glr-5"	AVE	1	0	Same annotation as in Table S1.			
+ABalpppapav/ABpraaaapav	AB_gen_9	Ciliated neurons	Cell type	"gcy-8, gcy-18, gcy-23, dac-1, ttx-1"	AFD	1	0	Same annotation as in Table S1.			
+ABalpppappp/ABpraaaappp	AB_gen_9	Ciliated neurons	Cell type	ttx-3	ASK/x	0	0	Forms a continuous UMAP trajectory with terminal ASK. Distinguished from daughter by embryo time.			
+ABalppppaad/ABpraaapaad	AB_gen_9	Ciliated neurons	Cell type	"K04D7.6, xbx-9, F15A4.5"	ADL	1	0	Same annotation as in Table S1.			
+ABalppppapa/ABpraaapapa	AB_gen_9	Ciliated neurons	Cell type	"sox-2, tbx-2"	OLL/x	0	0	"Forms a continuous UMAP trajectory with terminal OLL (in 3D version of ""Ciliated neurons"" UMAP; trajectory is gapped in 2D version). Distinguished from daughter by embryo time."			
+ABalpppppaa/ABpraaappaa	AB_gen_9	Ciliated neurons	Cell type	"ceh-19, cat-4, bas-1"	ADF	1	0	Same annotation as in Table S1.			
+ABalpppppap/ABpraaappap	AB_gen_9	Ciliated neurons	Cell type	"srd-23, odr-1, daf-11, sox-2"	AWB	1	0	Same annotation as in Table S1.			
+ABalppppppa/ABpraaapppa	AB_gen_9	Ciliated neurons	Cell type	"che-1, ceh-36"	ASE/x	0	0	Forms a continuous UMAP trajectory with terminal ASE. Distinguished from daughter by embryo time.			
+ABalppppppp/ABpraaapppp	AB_gen_9	Ciliated neurons	Cell type	"sptf-1, trx-1"	ASJ/AUA	0	0	Forms a continuous UMAP trajectory with terminal ASJ and AUA. Distinguished from daughters by embryo time and branch point.			
+ABaraaapppa/ABalpaappaa	AB_gen_9	Pharynx	Cell type	"inx-12, lack of let-23"	arc ant D	1	0	"We have tentatively identified arc ant V in a separate cell cluster, suggesting that this annotation only includes arc ant D. See note for lineage ""ABalpapaapa/ABarappaapa"". This distinction is not high-confidence however, so this annotation may in fact include arc ant V as well."			
+ABaraapxapp/ABarapapppa	AB_gen_9	Pharynx	Cell type	"ttx-1, pax-1, agr-1"	mc2	1	0	Same annotation as in Table S1.			
+ABaraapxpaa	AB_gen_9	Pharynx	Cell type	"ttx-3, nhr-239, unc-86"	x/NSM	0	0				
+ABarapapapp	AB_gen_9	Non-ciliated neurons	Cell type	"unc-4, ceh-34, tbx-2, flp-4, flp-13, unc-7"	I5	1	0	Same annotation as in Table S1.			
+ABarpaaaapp/ABarpaaapap/ABpxpaaapap	AB_gen_9	Glia and excretory cells	Cell type	"aff-1, kcc-3, aqp-7, K09F5.6, mltn-13, K08D12.4"	CEPsh	1	0	Same annotation as in Table S1. 			
+ABarpapaapp/ABplaaaaapp	AB_gen_9	Ciliated neurons	Cell type	unc-86	CEP/URX	0	0	Forms a continuous UMAP trajectory with terminal URX and CEP. Distinguished from daughters by embryo time and branch point.			
+ABarppxappx	AB_gen_9	Touch receptors	Cell type	"unc-86, mec-7, mec-3, unc-62"	ALM and BDU	1	0	"Forms a continuous UMAP trajectory with its parent, ABarppxapp. Distinguished from its parent by embryo time and the onset of mec-3 expression."			
+ABplpaaaapa	AB_gen_9	Duct and pore	Cell type	"irx-1, ceh-37, grl-2, aff-1"	Excretory duct	1	1	"Same annotation as in Table S1. These cells are a redundant subset of the cells in the annotation ""ABpxpaaaapa"". A UMAP of just duct+pore cells identifies two trajectories. One trajectory is aff-1(+), putatively corresponding to the excretory duct, while the other is aff-1(-), putatively corresponding to the G1, which in the embryo serves as the excretory pore."			
+ABplpappaap	AB_gen_9	Glia and excretory cells	Cell type	"pros-1, ceh-37, ceh-6, hlh-11"	Excretory cell	1	0	Same annotation as in Table S1.			
+ABplpapppax	AB_gen_9	Rectal cells	Cell type	"pha-4, pal-1, egl-38"	K and K'	1	0	Same annotation as in Table S1.			
+ABplpappppa	AB_gen_9	"Non-ciliated neurons, Rectal cells"	Cell type	"Early PVT: egl-46, lim-6, and unc-6. Late PVT: gpa-2, mec-1, zig-5, vab-15, dop-5, pdf-1, lim-6, unc-6."	PVT	1	0	"Same annotation as in Table S1. Early PVT cells are annotated in the UMAP ""Rectal only"". Late PVT cells are annotated in the UMAP ""Non-ciliated neurons""."			
+ABplpappppp	AB_gen_9	Rectal cells	Cell type	"pha-4, pal-1, dve-1"	rect_D	1	0	"Same annotation as in Table S1. Includes early rect_D cells only. Later rectal gland cells (rect_D and rect_VL/R) are annotated as ""ABplpappppp/ABpxppppaap""."			
+ABplpappppp/ABpxppppaap	AB_gen_9	Rectal cells	Cell type	"pha-4, pal-1, dve-1, nac-2, elt-3, tat-4"	rect_D and rect_V	1	1	"Same annotation as in Table S1. Includes late rect_D and rect_VL/R. Early rect_D is annotated as ""ABplpappppp""."			
+ABplppppapx	AB_gen_9	Rectal cells	Cell type	"egl-38, egl-20, mom-2"	F and U	1	0	Same annotation as in Table S1.			
+ABprpaaaapa	AB_gen_9	Duct and pore	Cell type	"irx-1, ceh-37, grl-2, lack of aff-1"	Excretory pore (G1)	1	1	"Same annotation as in Table S1. These cells are a redundant subset of the cells in the annotation ""ABpxpaaaapa"". A UMAP of just duct+pore cells identifies two trajectories. One trajectory is aff-1(+), putatively corresponding to the excretory duct, while the other is aff-1(-), putatively corresponding to the G1, which in the embryo serves as the excretory pore."			
+ABprpappaaa	AB_gen_9	Non-ciliated neurons	Cell type	"unc-86, unc-130, nhr-67, slt-1, rig-4"	RIH	1	0	Same annotation as in Table S1.			
+ABprpappaap	AB_gen_9	Non-ciliated neurons	Cell type	"unc-25, unc-46, unc-47, lim-6, ceh-27, alr-1"	AVL	1	0	Same annotation as in Table S1.			
+ABprpappapa	AB_gen_9	Non-ciliated neurons	Cell type	"flp-11, unc-25, aptf-1, lim-6"	RIS	1	0	Same annotation as in Table S1.			
+ABprpapppap	AB_gen_9	Non-ciliated neurons	Cell type	"lite-1, glr-1, glr-2, nmr-2, lin-11, ast-1, odr-2, F59E11.7, unc-62"	AVG	1	0	Same annotation as in Table S1.			
+ABprpppaaaa	AB_gen_9	Rectal cells	Cell type	"ceh-6, ref-2, mom-2, nhr-25, lack of cnd-1"	Y	1	0	Same annotation as in Table S1.			
+ABprppppapa	AB_gen_9	Rectal cells	Cell type	"ceh-6, ref-2, mab-9, ceh-27"	B	1	0	Same annotation as in Table S1.			
+ABprppppapp	AB_gen_9	"Non-ciliated neurons, Rectal cells"	Cell type	"Early DVA: fax-1, cnd-1, pal-1, lin-11. Late DVA: lin-44, nob-1, fax-1, nlp-12, twk-16, lin-11."	DVA	1	0	"Same annotation as in Table S1. Early DVA cells are annotated in the UMAP ""Rectal only"". Late DVA cells are annotated in the UMAP ""Non-ciliated neurons""."			
+ABpxaapaaaa	AB_gen_9	Glia and excretory cells	Cell type	"nhr-25, ceh-32, slt-1, sym-1"	hyp3	1	0	Same annotation as in Table S1.			
+ABpxaapaaap/ABalaaapall/ABalaaapprr/ABalppapapp/ABarapppapp	AB_gen_9	Glia and excretory cells	Cell type	"grl-18, wrt-6"	ILso	1	0	Same annotation as in Table S1.			
+ABpxaapaapa	AB_gen_9	Non-ciliated neurons	Cell type	"unc-86, sox-2, glr-8"	URB	1	0	"Same annotation as in Table S1. Definitely includes URB, but may also include URA."			
+ABpxaapaapp	AB_gen_9	Glia and excretory cells	Cell type	"aff-1, kcc-3, nas-31, pros-1, F52E1.2, F16F9.3"	AMsh	1	0	Same annotation as in Table S1.			
+ABpxaapapaa	AB_gen_9	Ciliated neurons	Cell type	"odr-7, nhr-216, ocr-1"	AWA	1	0	Same annotation as in Table S1.			
+ABpxaapapap	AB_gen_9	Ciliated neurons	Cell type	"gcy-11, capa-1"	ASG	1	0	Same annotation as in Table S1.			
+ABpxaapappa	AB_gen_9	Non-ciliated neurons	Cell type	"snet-1, aptf-1, odr-2, glr-2"	AIB	1	0	Same annotation as in Table S1.			
+ABpxaapappp	AB_gen_9	CIliated neurons	Cell type	See note.	ASI/x	0	0	"Forms a continuous UMAP trajectory with terminal ASI (in 3D version of ""Ciliated neurons"" UMAP; trajectory is gapped in 2D version). Distinguished from daughter by embryo time."			
+ABpxapaaaap	AB_gen_9	Ciliated neurons	Cell type	"unc-62, ceh-13"	ADE/ADA	0	0	Forms an almost-continuous UMAP trajectory with terminal ADE. Distinguished from daughter by embryo time.			
+ABpxapaaapa	AB_gen_9	Touch receptors	Cell type	"unc-86, mec-7, unc-62"	FLP/AIZ	0	0	Forms a continuous UMAP trajectory with terminal FLP. Distinguished from daughter by embryo time.			
+ABpxapapppp	AB_gen_9	Touch receptors	Cell type	"unc-86, mec-7, egl-5"	(PLM/ALN)/x	0	0	"Forms a continuous UMAP trajectory with terminal PLM. It is unclear if this annotation also includes its daughter, the PLM/ALN parent. It definitely does not include terminal PLM or ALN though, and is distinguished from its parent by embryo time."			
+ABpxapppaaa	AB_gen_9	Non-ciliated neurons	Cell type	"lin-11, vab-15, ceh-43, glr-1, nlp-17, C35B1.7, F26A10.1, Y43F8B.20, acr-23, irx-1"	PVQ	1	0	"Same annotation as in Table S1. Definitely includes PVQ, but may also include PVC."			
+ABpxapppapp	AB_gen_9	Ciliated neurons	Cell type	"hlh-14, egl-5, egl-43, ift-81 (cilia gene); lack of pal-1"	HSN/PHB	0	0				
+ABpxpaaaaap	AB_gen_9	Ciliated neurons	Cell type	"ceh-36, odr-1, daf-11, sox-2"	AWC	1	0	Same annotation as in Table S1.			
+ABpxpaaaapa	AB_gen_9	Glia and excretory cells	Cell type	"irx-1, ceh-37, grl-2"	Excretory duct and G1 pore	1	0	Same annotation as in Table S1.			
+ABpxpaapaaa	AB_gen_9	Non-ciliated neurons	Cell type	"odr-2, lim-4, ceh-75, ast-1"	RIV	1	0	Same annotation as in Table S1.			
+ABpxpaapaap	AB_gen_9	Non-ciliated neurons	Cell type	"fax-1, unc-42, unc-3, ceh-31, pdf-1"	AVB	1	0	Same annotation as in Table S1.			
+ABpxpaapapa	AB_gen_9	Glia and excretory cells	Cell type	"grd-15, grl-12"	AMso	1	0	Same annotation as in Table S1.			
+ABpxpaappaa	AB_gen_9	Ciliated neurons	Cell type	"osm-10, R102.2, deg-1, M04B2.6, unc-42"	ASH	1	0	Same annotation as in Table S1.			
+ABpxpaappap	AB_gen_9	Non-ciliated neurons	Cell type	"aptf-1, glr-4, ser-4, sto-3, unc-29"	RIB	1	0	Same annotation as in Table S1.			
+ABpxpaapppa	AB_gen_9	Non-ciliated neurons	Cell type	"snet-1, flp-22, mbr-1, mls-2, mod-5, unc-86, inx-19"	AIM	1	0	Same annotation as in Table S1.			
+ABalppappaa/ABarappppaa/ABpxpapaaaa	AB_gen_9	Non-ciliated neurons	Cell type	"lad-2, acc-1, flp-22, odr-2, unc-42, glr-1, glr-5"	SMD	1	0	Same annotation as in Table S1.			
+ABpxpapaaap	AB_gen_9	Non-ciliated neurons	Cell type	"ttx-3, ceh-10, F17C11.2, flp-9, glc-3, bus-18, ser-2, nlp-15"	AIY	1	0	Same annotation as in Table S1.			
+ABpxpapaapa/ABpxpapappa	AB_gen_9	Non-ciliated neurons	Cell type	"ceh-17, ceh-24, unc-42, vab-8, ser-6, lim-4"	SIA	1	0	Same annotation as in Table S1.			
+ABpxpapapaa	AB_gen_9	Glia and excretory cells	Cell type	"lim-6, ser-2, aat-1"	Excretory gland	1	0	Same annotation as in Table S1.			
+ABpxpapapap	AB_gen_9	Non-ciliated neurons	Cell type	"flp-1, fax-1, unc-42, sox-2, glr-5"	AVK	1	0	Same annotation as in Table S1.			
+ABpxpapaapp/ABpxppaaaaa	AB_gen_9	Non-ciliated neurons	Cell type	"fax-1, ceh-24, unc-42, vab-8, tmc-1, glr-5"	SIB	1	0	Same annotation as in Table S1.			
+ABpxppaaaap	AB_gen_9	Non-ciliated neurons	Cell type	See note.	x/RIC	0	0	Forms a near-continuous UMAP trajectory with terminal RIC. Distinguished from daughter by embryo time.			
+ABpxppaapap	AB_gen_9	Non-ciliated neurons	Cell type	"tdc-1, cex-1, glr-1, nmr-2"	RIM	1	0	Same annotation as in Table S1.			
+ABpxpppaapa	AB_gen_9	Non-ciliated neurons	Cell type	"pal-1, egl-5, hlh-14, cfi-1, lack of (lin-11, vab-15)"	PVC/LUA	0	0	"cfi-1 expressed in terminal PVC and LUA, but not PHA, PVQ, HSN, or PHB (Wormbase)."			
+ABpxppppaaa	AB_gen_9	Non-ciliated neurons	Cell type	"mbr-1, nlp-7, unc-30, lin-11, pdf-1, glb-17"	PVP	1	0	Same annotation as in Table S1.			
+ABalapxpapaa/ABpxpaaappaa	AB_gen_10	Ciliated neurons	Cell type	"ocr-4, dyla-1, dhc-3, pcrg-1"	OLQ	1	0	Same annotation as in Table S1.			
+ABalapxppaaa/ABalaappppaa/ABalapaappaa/ABalppapppaa/ABarapppppaa	AB_gen_10	Ciliated neurons	Cell type	"flp-3, agr-1, sox-2"	IL1	1	0	Same annotation as in Table S1.			
+ABalpapapapp/ABarappapapp/ABalpapappp/ABarappappp	AB_gen_10	Non-ciliated neurons	Cell type	"sox-3, ceh-24, lim-4, vab-8, unc-42"	SMB	1	0	Same annotation as in Table S1.			
+ABalpppapppa/ABpraaaapppa	AB_gen_10	Ciliated neurons	Cell type	"F09E8.8, pax-2, C47D2.1"	ASK	1	0	Same annotation as in Table S1.			
+ABalppppapaa/ABpraaapapaa	AB_gen_10	Ciliated neurons	Cell type	"sox-2, tbx-2"	OLL	1	0	Same annotation as in Table S1.			
+ABalppppppaa/ABpraaapppaa	AB_gen_10	Ciliated neurons	Cell type	"che-1, ceh-36"	ASE	1	0	Same annotation as in Table S1.			
+ABalpppppppa/ABpraaappppa	AB_gen_10	Ciliated neurons	Cell type	"ssu-1, trx-1, nhr-6, sptf-1"	ASJ	1	0	Same annotation as in Table S1.			
+ABalpppppppp/ABpraaappppp	AB_gen_10	Ciliated neurons	Cell type	"ceh-6, dop-1, flr-4, che-7"	AUA	1	0	"Branches from parent, the ASJ-AUA neuroblast, in the ""Ciliated neurons"" UMAP. Differentiated AUA cells from late embryos are then found in the ""Non-ciliated neurons"" UMAP."			
+ABarpapaappa/ABplaaaaappa/ABpxpaappppa	AB_gen_10	Ciliated neurons	Cell type	"dat-1, cat-2, tba-9, nhr-67, nhr-67"	CEP	1	0	Same annotation as in Table S1.			
+ABarpapaappp/ABplaaaaappp	AB_gen_10	Ciliated neurons	Cell type	"gcy-32, gcy-35, gcy-36, gcy-37"	URX	1	0	Same annotation as in Table S1.			
+ABpxaapapppa	AB_gen_10	Ciliated neurons	Cell type	"ins-6, cng-2"	ASI	1	0	Same annotation as in Table S1.			
+ABpxapaaaapa	AB_gen_10	Ciliated neurons	Cell type	"dat-1, cat-2, tba-9, pdf-1, unc-62, cwn-2, ceh-13"	ADE	1	0	Same annotation as in Table S1.			
+ABpxapaaapad	AB_gen_10	Touch receptors	Cell type	"unc-86, mec-7, mec-3, unc-62"	FLP	1	0	Same annotation as in Table S1.			
+ABpxapaaapav	AB_gen_10	Non-ciliated neurons	Cell type	"ser-2, unc-86, eat-4, acc-2"	AIZ	1	0	Same annotation as in Table S1.			
+ABpxapppappp	AB_gen_10	Ciliated neurons	Cell type	"osm-10, R102.2, gpa-6, cog-1, low expression of ceh-14, srb-6, srh-74"	PHB	1	0	"Same annotation as in Table S1. Definitely includes PHB, but may also include PHA."			
+ABpxppaaaapp	AB_gen_10	Non-ciliated neurons	Cell type	"tbh-1, tdc-1, glr-5"	RIC	1	0	Same annotation as in Table S1.			

@@ -134,3 +134,25 @@ The goal is to explore how cell identity and developmental time are represented 
 This project will serve as a real-world example of how to build, debug, and scale a full analysis pipeline. You’ll walk away with a **reproducible, AI-augmented bioinformatics project** that you can use as a template in future work.
 
 Happy hacking! 🧬💻✨
+
+
+# Reference Materials
+
+This directory contains reference material from:
+
+Packer et al. 2019  
+"A lineage-resolved molecular atlas of C. elegans embryogenesis"
+
+Students will primarily use **Table_S4.tsv** in Phase II and Phase III.
+
+## packer_table_s4.tsv
+
+This table contains lineage annotations and marker genes used in the paper.
+
+In this project you will use Table S4 to:
+
+- identify clusters corresponding to specific cell types
+- locate the IL1/IL2 lineage branch
+- verify marker genes during cluster annotation
+
+This file is provided as reference material and should **not be modified**.

@@ -1,5 +1,23 @@
 mode: phase1
 
+star:
+  genome_index: /net/trapnell/vol1/home/coletrap/teaching/genome569/reference
+  whitelist: /net/trapnell/vol1/home/coletrap/teaching/genome569/barcode-whitelists/737K-august-2016.txt
+  cb_length: 16
+  umi_start: 17
+  umi_length: 10
+  threads: 8
+
+paths:
+  fastq_dir: /net/trapnell/vol1/home/coletrap/teaching/genome569/fastqs
+  full_counts_dir: provided/full_counts
+  full_counts_matrix_dir: provided/full_counts/filtered
+  reference_table_s4: reference/packer_table_s4.tsv
+
+samples:
+  phase1:
+    - SRX5411289
+
 mini_data_dir: provided/mini_data
 mini_fastq_dir: provided/mini_data/fastq
 full_fastq_dir: /net/trapnell/vol1/home/coletrap/teaching/genome569/fastqs

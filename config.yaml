@@ -1,0 +1,20 @@
+mode: phase1
+
+mini_data_dir: provided/mini_data
+mini_fastq_dir: provided/mini_data/fastq
+
+full_counts_dir: provided/full_counts
+full_counts_matrix_dir: provided/full_counts/filtered
+
+reference_table_s4: reference/packer_table_s4.tsv
+reference_genome_dir: provided/reference
+starsolo_index_dir: provided/reference/starsolo_index
+gtf_file: provided/reference/genes.gtf
+
+results_dir: results
+notebook: notebooks/analysis.Rmd
+
+sample_sheet: provided/samples.tsv
+
+umap_dims: 30
+cluster_resolution: 1e-3

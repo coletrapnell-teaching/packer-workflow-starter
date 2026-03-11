@@ -1,0 +1,164 @@
+---
+title: "Genome 569 Project Notebook"
+output: html_document
+---
+
+# Analysis Notebook
+
+Use this notebook as your main record for Phase II and Phase III.
+
+This notebook should grow over time. Keep your code, plots, and short notes here.
+
+## Setup
+
+```{r}
+library(monocle3)
+library(ggplot2)
+library(dplyr)
+library(readr)
+```
+
+## Loading Data
+
+Write a few lines here explaining which data you are using for this phase.
+
+```{r}
+counts_dir <- "../provided/full_counts/filtered"
+table_s4_path <- "../reference/packer_table_s4.tsv"
+
+# TODO: change counts_dir if your files are stored somewhere else
+cds <- load_cellranger_data(counts_dir)
+table_s4 <- read_tsv(table_s4_path, comment = "#")
+
+dim(exprs(cds))
+head(table_s4)
+```
+
+## Quality Control
+
+Start with a simple QC summary of the cells you loaded.
+
+```{r}
+colData(cds)$num_genes_expressed <- Matrix::colSums(exprs(cds) > 0)
+
+qplot(colData(cds)$num_genes_expressed, bins = 50) +
+  xlab("Genes detected per cell")
+
+# TODO: decide whether any obvious low-quality cells should be removed
+```
+
+## Normalization
+
+Describe how you normalized the data.
+
+```{r}
+cds <- preprocess_cds(cds, num_dim = 30)
+
+# TODO: change num_dim if needed
+```
+
+## PCA and UMAP
+
+Use this section to look at the main structure of the dataset.
+
+```{r}
+plot_pc_variance_explained(cds)
+
+cds <- reduce_dimension(cds)
+plot_cells(cds, label_groups_by_cluster = FALSE)
+```
+
+## Clustering
+
+Identify clusters that may contain the AWA/ASG branch.
+
+```{r}
+cds <- cluster_cells(cds)
+
+plot_cells(
+  cds,
+  color_cells_by = "cluster",
+  label_groups_by_cluster = TRUE,
+  label_leaves = FALSE,
+  label_branch_points = FALSE
+)
+```
+
+## Marker Analysis
+
+Find marker genes for the clusters you think are relevant.
+
+```{r}
+marker_genes <- c(
+  "odr-7", "nhr-216", "ocr-1",
+  "gcy-11", "capa-1",
+  "lin-11", "hlh-3", "ces-1", "unc-130", "ztf-11"
+)
+
+plot_cells(
+  cds,
+  genes = marker_genes,
+  show_trajectory_graph = FALSE,
+  label_cell_groups = FALSE
+)
+
+# TODO: decide which clusters best match AWA, ASG, and the shared branch
+```
+
+## Identifying the AWA/ASG Branch
+
+Use `reference/packer_table_s4.tsv` to help interpret the clusters.
+
+Useful rows to look for include:
+
+- `ABpxaapap`
+- `ABpxaapapa`
+- `ABpxaapapaa`
+
+Useful markers to check include:
+
+- AWA: `odr-7`, `nhr-216`, `ocr-1`
+- ASG: `gcy-11`, `capa-1`
+- shared branch: `lin-11`, `hlh-3`, `ces-1`, `unc-130`, `ztf-11`
+
+```{r}
+table_s4 %>%
+  filter(Lineage %in% c("ABpxaapap", "ABpxaapapa", "ABpxaapapaa"))
+
+# TODO: match your candidate clusters to these Table S4 rows
+# TODO: write a short note explaining your AWA/ASG call
+```
+
+## Trajectory Analysis
+
+Now focus on the AWA/ASG branch cells.
+
+```{r}
+# TODO: subset branch cells
+# TODO: run trajectory or pseudotime analysis
+```
+
+## Transcription Factor Analysis
+
+Look for transcription factors that change across the branch.
+
+```{r}
+# TODO: start with transcription factors from your marker results
+# TODO: compare how they change across the two daughter branches
+```
+
+## Final Heatmap
+
+Make a heatmap similar in spirit to Figure 3D from Packer et al., but for AWA vs ASG.
+
+```{r}
+# TODO: create the final heatmap
+```
+
+## Notes
+
+Write short notes here about:
+
+- how you identified the branch
+- which markers were most helpful
+- which transcription factors looked most interesting

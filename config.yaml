@@ -2,6 +2,7 @@ mode: phase1
 
 mini_data_dir: provided/mini_data
 mini_fastq_dir: provided/mini_data/fastq
+full_fastq_dir: /net/trapnell/vol1/home/coletrap/teaching/genome569/fastqs
 
 full_counts_dir: provided/full_counts
 full_counts_matrix_dir: provided/full_counts/filtered

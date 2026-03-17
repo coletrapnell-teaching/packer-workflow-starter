@@ -165,6 +165,13 @@ Use `notebooks/analysis.Rmd` as your main electronic lab notebook.
 If you save output files, keep them to a small number of plain files under `results/`,
 such as TSV tables or PDF figures.
 
+For Phase I, use the tiny test dataset in `provided/mini_data/`. In
+`config.yaml`, the active sample sheet should stay set to
+`sample_sheet: provided/mini_samples.tsv`. The full sample sheet is included
+only to show how the same workflow could scale up. You are not being asked
+to map the full dataset for this project; in Phase II you will be given the
+processed output.
+
 ---
 
 # R Markdown in VS Code on the Cluster

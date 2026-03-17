@@ -1,0 +1,2 @@
+sample_id	sample_name	srx	read_cdna	read_barcode	read_extra	include	time_min	solo_cb_length	solo_umi_start	solo_umi_length	solo_barcode_read_length
+uw300	UW synchronized 300 min post bleach (tiny test)	SRX5411289	provided/mini_data/uw300/uw300_2.fq	provided/mini_data/uw300/uw300_1.fq	NA	yes	300	NA	NA	NA	NA

@@ -9,19 +9,15 @@ star:
   threads: 8
 
 paths:
-  phase1_fastq_dir: provided/mini_data
   full_counts_dir: provided/full_counts
   full_counts_matrix_dir: provided/full_counts/filtered
   reference_table_s4: reference/packer_table_s4.tsv
 
-samples:
-  phase1:
-    - uw300
-
 results_dir: results
 notebook: notebooks/analysis.Rmd
-
-sample_sheet: provided/samples.tsv
+sample_sheet: provided/mini_samples.tsv
+# To explore what a full run would look like, you could switch this to
+# provided/samples.tsv, but you are not expected to process the full dataset.
 
 umap_dims: 30
 cluster_resolution: 1e-3

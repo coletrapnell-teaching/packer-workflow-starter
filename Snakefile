@@ -1,11 +1,27 @@
 configfile: "config.yaml"
 
+import csv
+
 MODE = config["mode"]
 RESULTS_DIR = config["results_dir"]
+SAMPLE_SHEET = config["sample_sheet"]
+
+
+def load_samples():
+    with open(SAMPLE_SHEET) as handle:
+        return list(csv.DictReader(handle, delimiter="\t"))
+
+
+SAMPLES = load_samples()
+PHASE1_SAMPLES = [
+    row["sample_id"]
+    for row in SAMPLES
+    if row.get("include", "").strip().lower() == "yes"
+]
 
 
 # This file shows the basic project flow.
-# Phase I uses workflow rules here.
+# Phase I uses the configured sample sheet to decide which sample(s) to run.
 # Phase II and Phase III mainly continue in notebooks/analysis.Rmd.
 
 rule all:
@@ -15,7 +31,10 @@ rule all:
 
 def phase_target():
     if MODE == "phase1":
-        return f"{RESULTS_DIR}/phase1_counts_done.txt"
+        return expand(
+            f"{RESULTS_DIR}/{{sample}}/Solo.out/Gene/filtered/matrix.mtx",
+            sample=PHASE1_SAMPLES,
+        )
     if MODE == "phase2":
         return f"{RESULTS_DIR}/phase2_ready.txt"
     if MODE == "phase3":
@@ -24,11 +43,10 @@ def phase_target():
 
 
 # Phase I:
-# Add rules here for the small STARsolo workflow on the provided example data.
-# A simple Phase I layout is:
-# - check that the mini data and references exist
-# - run STARsolo on the mini dataset
-# - write one small file in results/ when the phase is done
+# Add rules here for the small STARsolo workflow.
+# The default Phase I run uses provided/mini_samples.tsv.
+# You are not expected to process the full dataset in this project.
+# Read the FASTQ paths from the sample sheet instead of hard-coding file names.
 
 rule check_phase1_inputs:
     output:
@@ -41,9 +59,12 @@ rule run_starsolo_mini:
     input:
         f"{RESULTS_DIR}/phase1_inputs_checked.txt"
     output:
-        f"{RESULTS_DIR}/phase1_counts_done.txt"
+        expand(
+            f"{RESULTS_DIR}/{{sample}}/Solo.out/Gene/filtered/matrix.mtx",
+            sample=PHASE1_SAMPLES,
+        )
     shell:
-        "echo 'TODO: run STARsolo on the mini dataset' > {output}"
+        "echo 'TODO: run STARsolo and write the filtered matrix files listed in rule all'"
 
 
 # Phase II:

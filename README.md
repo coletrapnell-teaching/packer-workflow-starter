@@ -167,6 +167,87 @@ such as TSV tables or PDF figures.
 
 ---
 
+# R Markdown in VS Code on the Cluster
+
+This project is set up to work well with R Markdown (`.Rmd`) files in VS Code
+over Remote SSH on a headless cluster node.
+
+## What to do
+
+1. Open the project in VS Code through Remote SSH.
+2. Make sure the `httpgd` R package is installed on the remote host.
+3. Keep this workspace setting in `.vscode/settings.json`:
+
+```json
+{
+  "r.plot.useHttpgd": true
+}
+```
+
+4. Start a fresh R terminal in VS Code.
+5. Run chunks from the `.Rmd` file in that terminal.
+6. Keep a minimal project `.Rprofile` that pre-sets a headless-safe knitr
+   device:
+
+```r
+if (!nzchar(Sys.getenv("DISPLAY"))) {
+  options(bitmapType = "cairo")
+}
+
+if (requireNamespace("knitr", quietly = TRUE)) {
+  knitr::opts_chunk$set(dev = "svglite")
+}
+```
+
+## Why this is needed
+
+Cluster sessions usually do not have an X11 display. If the VS Code R extension
+falls back to a PNG/X11 graphics path, chunk plots can fail with errors like:
+
+```text
+unable to start device PNG
+unable to open connection to X11 display ''
+```
+
+Using `httpgd` sends plots to the VS Code viewer over HTTP instead of trying to
+open an X11 graphics device on the remote machine.
+
+The separate `.Rprofile` fix matters for the **Knit RMD** button. During
+`rmarkdown::render()`, `knitr` may check whether `png()` is available before
+your setup chunk runs. On a headless cluster node that can trigger an X11
+warning even if the render succeeds. Pre-setting
+`knitr::opts_chunk$set(dev = "svglite")` avoids that probe.
+
+## What not to do
+
+- Do not add a project `.Rprofile` that manually sources VS Code R startup
+  files.
+- Do not force a custom graphics device with `options(device = ...)` unless you
+  know exactly why.
+- Do not assume that successful notebook preview means chunk plotting is
+  configured correctly. Preview and interactive chunk execution use different
+  paths.
+
+## Recommended VS Code R settings
+
+- `r.rterm.linux`: leave empty or set to `R`
+- `r.rterm.option`: use `--no-save --no-restore`
+
+## If plots still fail
+
+1. Restart the R session.
+2. Reload the VS Code window.
+3. Confirm `httpgd` is installed in the R library used by the VS Code terminal.
+4. Check that the workspace setting `r.plot.useHttpgd` is enabled.
+
+## Notes
+
+You may still see warnings about malformed `addins.dcf` files from some
+installed R packages. Those affect the RStudio addin picker only and are
+unrelated to R Markdown chunk plotting.
+
+---
+
 # What You Should Focus On
 
 The goal of this project is **not to build software infrastructure**.

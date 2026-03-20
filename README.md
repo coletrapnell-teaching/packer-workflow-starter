@@ -54,16 +54,37 @@ The workflow uses **STARsolo**, a widely used tool for processing single-cell RN
 
 You will run the workflow on a **small example dataset** so that it finishes quickly.
 
+For this dataset, **STARsolo default filtering is not sufficient for cell calling**.  
+You should compute total UMI counts per barcode, inspect the distribution with a simple rank or knee plot, and choose a barcode threshold for calling cells. As a rough guide, many real cells in these samples are around **700-1100 UMIs**, but some neurons can be lower.
+
 ### What you will do
 
 - examine the workflow structure  
 - run the pipeline  
 - generate a gene-by-cell count matrix  
+- perform simple cell calling from barcode UMI totals  
+- save a few small TSV files that describe your cell calls and background RNA  
 - understand what each step of the workflow produces  
 
 ### Key output
 
 A **count matrix** describing gene expression in individual cells.
+
+You should also produce three simple TSV files that make your Phase I decisions explicit:
+
+- `results/raw_umi_counts.tsv`  
+  Purpose: one row per barcode with its total raw UMI count.  
+  Required columns: `barcode`, `total_counts`
+- `results/cell_calling_summary.tsv`  
+  Purpose: a short summary of the threshold you used and how many barcodes were kept.  
+  Required columns: `sample_id`, `manual_min_umi`, `raw_knee_threshold`, `filtered_umi_p01`, `auto_min_umi`, `min_umi`, `threshold_source`, `total_barcodes`, `called_barcodes`, `empty_droplets_lt50`
+- `results/background_profile.tsv`  
+  Purpose: a gene-level background RNA profile estimated from empty droplets.  
+  Required columns: `gene_id`, `feature_id`, `feature_type`, `background_counts`, `background_fraction`
+
+These files define a data contract that will be used directly in Phase II.
+
+When you move to Phase II, assume that cell calling is already finished and that background profiles already exist. In Phase II, you should **not** redo cell calling or recompute background profiles.
 
 ---
 
@@ -73,15 +94,29 @@ In Phase II you will analyze the **full dataset** using counts that have already
 
 Your task is to identify the region of the dataset corresponding to the **AWA/ASG developmental branch**.
 
+You will be given processed outputs from Phase I that follow the format described above. Read those files into your analysis and reuse the background profiles that were already computed.
+
+Before identifying AWA and ASG, reproduce a known lineage such as **ASE / ASJ / AUA**. This is a useful sanity check that your clustering and marker-based interpretation are behaving sensibly.
+
 ### What you will do
 
 You will perform a typical single-cell RNA-seq analysis:
 
+- load counts and metadata  
+- incorporate background information  
 - quality control  
 - normalization  
+- apply background correction  
 - dimensionality reduction (PCA / UMAP)  
 - clustering  
 - marker gene analysis  
+- assign cell types  
+
+Keep this phase simple: one notebook, a small number of results files, and a clear biological interpretation are enough.
+
+Phase II assumes that cells have already been called in Phase I and that the empty-droplet background profiles already exist. **Do not recompute background profiles here.**
+
+Background RNA is estimated from empty droplets. Because it differs across samples, it can create batch-like structure in the data. In this phase, use the provided background profiles and treat them as information to model and remove during PCA-based analysis rather than something to recalculate from scratch.
 
 Your goal is to identify clusters corresponding to the **AWA** and **ASG** neuron lineages.
 
@@ -117,6 +152,12 @@ By the end of Phase II you should be able to identify:
 - the **AWA lineage**  
 - the **ASG lineage**  
 - the **shared progenitor region**
+
+You should also save a Monocle CDS object for Phase III with:
+
+`save_monocle_objects(cds, directory_path = "results/awa_asg_cds")`
+
+This is the main output that Phase III will build from. It should include your PCA, UMAP, clustering, and cell-type annotations. Do **not** use `saveRDS()` here, and do **not** invent a custom file format.
 
 You should record this work in the same notebook that you will continue in Phase III:
 
@@ -165,93 +206,32 @@ Use `notebooks/analysis.Rmd` as your main electronic lab notebook.
 If you save output files, keep them to a small number of plain files under `results/`,
 such as TSV tables or PDF figures.
 
-For Phase I, use the tiny test dataset in `provided/mini_data/`. In
-`config.yaml`, the active sample sheet should stay set to
-`sample_sheet: provided/mini_samples.tsv`. The full sample sheet is included
-only to show how the same workflow could scale up. You are not being asked
-to map the full dataset for this project; in Phase II you will be given the
-processed output.
-
 ---
 
-# R Markdown in VS Code on the Cluster
+# Running Phase I
 
-This project is set up to work well with R Markdown (`.Rmd`) files in VS Code
-over Remote SSH on a headless cluster node.
+To switch between the tiny plumbing test and the full dataset, change one line in
+`config.yaml`:
 
-## What to do
+- mini run: `sample_sheet: provided/mini_samples.tsv`
+- full run: `sample_sheet: provided/samples.tsv`
 
-1. Open the project in VS Code through Remote SSH.
-2. Make sure the `httpgd` R package is installed on the remote host.
-3. Keep this workspace setting in `.vscode/settings.json`:
+For a local test on one sample:
 
-```json
-{
-  "r.plot.useHttpgd": true
-}
+```bash
+snakemake -j 1 results/uw300/Solo.out/Gene/called/matrix.mtx
 ```
 
-4. Start a fresh R terminal in VS Code.
-5. Run chunks from the `.Rmd` file in that terminal.
-6. Keep a minimal project `.Rprofile` that pre-sets a headless-safe knitr
-   device:
+To distribute samples across cluster jobs with SGE, use Snakemake with `qsub`.
+Each sample-level `starsolo` job can run on a separate node.
 
-```r
-if (!nzchar(Sys.getenv("DISPLAY"))) {
-  options(bitmapType = "cairo")
-}
-
-if (requireNamespace("knitr", quietly = TRUE)) {
-  knitr::opts_chunk$set(dev = "svglite")
-}
+```bash
+snakemake -j 4 \
+  --cluster "qsub -terse -cwd -pe serial {threads} -l h_rt=12:00:00 -l mfree=8G"
 ```
 
-## Why this is needed
-
-Cluster sessions usually do not have an X11 display. If the VS Code R extension
-falls back to a PNG/X11 graphics path, chunk plots can fail with errors like:
-
-```text
-unable to start device PNG
-unable to open connection to X11 display ''
-```
-
-Using `httpgd` sends plots to the VS Code viewer over HTTP instead of trying to
-open an X11 graphics device on the remote machine.
-
-The separate `.Rprofile` fix matters for the **Knit RMD** button. During
-`rmarkdown::render()`, `knitr` may check whether `png()` is available before
-your setup chunk runs. On a headless cluster node that can trigger an X11
-warning even if the render succeeds. Pre-setting
-`knitr::opts_chunk$set(dev = "svglite")` avoids that probe.
-
-## What not to do
-
-- Do not add a project `.Rprofile` that manually sources VS Code R startup
-  files.
-- Do not force a custom graphics device with `options(device = ...)` unless you
-  know exactly why.
-- Do not assume that successful notebook preview means chunk plotting is
-  configured correctly. Preview and interactive chunk execution use different
-  paths.
-
-## Recommended VS Code R settings
-
-- `r.rterm.linux`: leave empty or set to `R`
-- `r.rterm.option`: use `--no-save --no-restore`
-
-## If plots still fail
-
-1. Restart the R session.
-2. Reload the VS Code window.
-3. Confirm `httpgd` is installed in the R library used by the VS Code terminal.
-4. Check that the workspace setting `r.plot.useHttpgd` is enabled.
-
-## Notes
-
-You may still see warnings about malformed `addins.dcf` files from some
-installed R packages. Those affect the RStudio addin picker only and are
-unrelated to R Markdown chunk plotting.
+If you want to limit the full run to one sample first, edit `provided/samples.tsv`
+so only that sample has `include=yes`.
 
 ---
 

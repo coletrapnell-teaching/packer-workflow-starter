@@ -18,6 +18,3 @@ notebook: notebooks/analysis.Rmd
 sample_sheet: provided/mini_samples.tsv
 # To explore what a full run would look like, you could switch this to
 # provided/samples.tsv, but you are not expected to process the full dataset.
-
-umap_dims: 30
-cluster_resolution: 1e-3

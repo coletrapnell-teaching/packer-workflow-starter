@@ -55,7 +55,7 @@ The workflow uses **STARsolo**, a widely used tool for processing single-cell RN
 You will run the workflow on a **small example dataset** so that it finishes quickly.
 
 For this dataset, **STARsolo default filtering is not sufficient for cell calling**.  
-You should compute total UMI counts per barcode, inspect the distribution with a simple rank or knee plot, and choose a barcode threshold for calling cells. As a rough guide, many real cells in these samples are around **700-1100 UMIs**, but some neurons can be lower.
+You should compute total UMI counts per barcode, inspect the distribution with a simple rank or knee plot, and choose a barcode threshold for calling cells. Many real cells in these samples are around **700-1100 UMIs**, but some neurons can be lower. Expect less with fewer reads.
 
 ### What you will do
 
